@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Apr 15 13:00:56 2021
+# Process ID: 12608
+# Current directory: C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/Projekt/Projekt.runs/synth_1
+# Command line: vivado.exe -log Door_lock_system.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Door_lock_system.tcl
+# Log file: C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/Projekt/Projekt.runs/synth_1/Door_lock_system.vds
+# Journal file: C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/Projekt/Projekt.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Door_lock_system.tcl -notrace
