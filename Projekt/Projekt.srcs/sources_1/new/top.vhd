@@ -34,16 +34,16 @@ begin
             reset      => BTNC,
             clk_disp   => CLK100MHZ,
             
-            BTN(0) => SW(0),        --0    --vstupni klavesnice
-            BTN(1) => SW(1),
-            BTN(2) => SW(2),
-            BTN(3) => SW(3),
-            BTN(4) => SW(4),
-            BTN(5) => SW(5),
-            BTN(6) => SW(6),
-            BTN(7) => SW(7),
-            BTN(8) => SW(8),
-            BTN(9) => SW(9),        --9
+            BTN(0)  => SW(0),        --0    --vstupni klavesnice
+            BTN(1)  => SW(1),
+            BTN(2)  => SW(2),
+            BTN(3)  => SW(3),
+            BTN(4)  => SW(4),
+            BTN(5)  => SW(5),
+            BTN(6)  => SW(6),
+            BTN(7)  => SW(7),
+            BTN(8)  => SW(8),
+            BTN(9)  => SW(9),        --9
             BTN(10) => SW(10),      --cancel
             BTN(11) => SW(11),      --enter
             dp_i => "1111",

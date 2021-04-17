@@ -1,6 +1,6 @@
-webtalk_init -webtalk_dir C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/
+webtalk_init -webtalk_dir C:/Users/Client/Desktop/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Thu Apr 15 13:08:54 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Sat Apr 17 00:25:42 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2020.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "3064766" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "977ce968-09f8-4d0e-8993-ed290a4aa2b8" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "71bf941e724f41c3a8146f0c04f2cc5e" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "555" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "696" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-4900MQ CPU @ 2.80GHz" -context "user_environment"
@@ -26,7 +26,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "2 us" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "2" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.00_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "6608_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 1169210145 -regid "" -xml C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.03_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "6560_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 2487369126 -regid "" -xml C:/Users/Client/Desktop/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/Client/Desktop/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/Client/Desktop/Projekt/Projekt.sim/sim_1/behav/xsim/xsim.dir/tb_door_lock_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

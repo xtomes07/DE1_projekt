@@ -9,7 +9,7 @@ end tb_door_lock;
 
 architecture Behavioral of tb_door_lock is     
 -- Local constants
-constant c_CLK_100MHZ_PERIOD : time := 100 ns;    
+constant c_CLK_100MHZ_PERIOD : time := 50 ns;    
 signal s_clk_100MHz : std_logic;           
 signal BTN_s     :  std_logic_vector(12 - 1 downto 0);                        
 --signal pass_s    :  std_logic;    
@@ -33,8 +33,7 @@ uut_Door_lock_system : entity work.Door_lock_system
         port map(
             clk     => s_clk_100MHz,
             BTN     =>  BTN_s, 
---            pass   =>  pass_s,
---            fail    => fail_s,
+
             dvere   => dvere_s,
             --displeje
            
@@ -95,19 +94,18 @@ begin
     
         -- Report a note at the begining of stimulus process
         report "Stimulus process started" severity note;
-        BTN_s <= "000000000000"; wait for 100 ns;
-        
+    BTN_s <= "000000000000"; wait for 100 ns;
         BTN_s <= "000000100000"; wait for 100 ns;
-    
+    BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000001000000"; wait for 100 ns;
-  
+   BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000010000000"; wait for 100 ns; 
-    
+    BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000000000100"; wait for 100 ns;
-    
+    BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "100000000000"; wait for 100 ns;
        
-        BTN_s <= "000000000000"; wait for 350 ns;
+    BTN_s <= "000000000000"; wait for 350 ns;
   --------------------------------------------------------------------      
         BTN_s <= "000001000000"; wait for 100 ns;
         

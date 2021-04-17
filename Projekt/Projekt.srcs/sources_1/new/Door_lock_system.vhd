@@ -2,7 +2,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-
 entity Door_lock_system is
     Port (
         dp_i    : in  std_logic_vector(4 - 1 downto 0);
@@ -28,7 +27,12 @@ end Door_lock_system;
 
 architecture Behavioral of Door_lock_system is
     -- Define the states
-    type state_type is (eval,s0,s1,s2,s3,s4);
+    type state_type is (wait_state,
+                        setValue1,
+                        setValue2,
+                        setValue3,
+                        setValue4,
+                        eval_state);
     signal present_state, next_state: state_type;
     
      -- Internal clock enable
@@ -77,63 +81,82 @@ clk => clk_disp
 
  
 door_lock : process(BTN)      --pin je 5672 hlavni proces
-begin
-                         
+begin   
+
+
+                               
         case next_state is
-            when s0 =>
+            when setValue1 =>
+                present_state<=setValue1;
+                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                    next_state<=setValue2;
+                elsif (BTN = "010000000000") then
+                    next_state <=wait_state;
+                elsif (BTN = "100000000000") then
+                    next_state <=eval_state;
+                end if;
                 
-                present_state<=s0;
-                s_pass <= '0';
+            when setValue2 => 
+                present_state<=setValue2;
+                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                    next_state<=setValue3;
+                elsif (BTN = "010000000000") then
+                    next_state <=wait_state;
+                elsif (BTN = "100000000000") then
+                    next_state <=eval_state;
+                end if;
+                
+            when setValue3 => 
+                present_state<=setValue3;
+                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                    next_state<=setValue4;
+                elsif (BTN = "010000000000") then
+                    next_state <=wait_state;
+                elsif (BTN = "100000000000") then
+                    next_state <=eval_state;
+                end if;
+                
+            when setValue4 => 
+                present_state<=setValue4;
+                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                    next_state<=eval_state;
+                elsif (BTN = "010000000000") then
+                    next_state <=wait_state;
+                elsif (BTN = "100000000000") then
+                    next_state <=eval_state;
+                end if;
+           when eval_state =>
+                present_state<=eval_state;
+                if (BTN ="100000000000") then
+                    if (data3_i = "0101" and data2_i = "0110" and data1_i = "0111" and data0_i = "0010") then
+                        s_pass <= '1';
+                        next_state <= wait_state;
+                    else
+                        s_fail <= '1';
+                        next_state <= wait_state;
+                    end if;
+                elsif (BTN = "010000000000") then
+                    next_state <=wait_state; 
+                elsif (BTN /= "100000000000") and (BTN /= "010000000000")and (BTN /= "000000000000") then
+                    s_fail <= '1';
+                    s_pass <= '0';
+                    next_state <=wait_state;
+                end if;
+           when wait_state =>
                 s_fail <= '0';
-                if BTN = "010000000000" then
-                next_state <= s0;
-                else                                    --5
-                next_state <= s1;
-                end if;
-                
-            when s1 =>   
-                present_state<=s1;                         --6
-                if BTN = "010000000000" then
-                next_state <= s0;
-                else
-                next_state <= s2;
-                
-                end if;
-           when s2 =>
-                present_state<=s2;                               --7
-                if BTN = "010000000000" then
-                next_state <= s0;
-                else
-                next_state <= s3;   
-                end if;
-           when s3 =>
-                present_state<=s3;                              --2
-                if BTN = "010000000000" then
-                next_state <= s0;
-                else
-                next_state <= s4;           
-                end if;
-          when s4 =>
-                present_state<=s4;
-                next_state <= eval;
-         when eval =>
-                if (data3_i = "0101" and data2_i = "0110" and data1_i = "0111" and data0_i = "0010") then
-                s_pass <= '1';
-                next_state <= s0;
-                else
-                s_fail <= '1';
-                next_state <= s0;
-                end if; 
+                s_pass <= '0';
+                present_state <= wait_state;
+                next_state <= setValue1;
          end case; 
-           
-      
+   
 end process;
 
-p_prevod_12btn_to_4digit : process(BTN) --tlacitko se prevede na hodnotu pro 7segmentovku
+p_prevod_12btn_to_4digit : process(clk_disp) --tlacitko se prevede na hodnotu pro 7segmentovku
     begin
+    
         case BTN is
             when "000000000000" =>          -- PRAZDNO NEBUDE ZADNE ZOBRAZENE CISLO
-                data_prevod <= "1111"; 
+               data_prevod <= "1111"; 
             when "000000000001" =>
                 data_prevod <= "0000";      -- 0
             when "000000000010" =>
@@ -163,22 +186,31 @@ p_prevod_12btn_to_4digit : process(BTN) --tlacitko se prevede na hodnotu pro 7se
     
     p_ukladani : process(clk_disp) --ukladani tlacitka 
     begin
+       
         case present_state is
-            when s0 =>  
-                data0_i <= "1111";
-                data1_i <= "1111";
-                data2_i <= "1111";
+            when setValue1 =>  
+                if BTN /= "000000000000" then
+                    data3_i <= data_prevod;
+                end if;
+            when setValue2 =>
+                if BTN /= "000000000000" then                       
+                    data2_i <= data_prevod;  
+                end if;    
+            when setValue3 =>
+                if BTN /= "000000000000" then
+                    data1_i <= data_prevod; 
+                end if;   
+            when setValue4 =>
+                if BTN /= "000000000000" then
+                    data0_i <= data_prevod; 
+                end if;   
+            when eval_state =>  
+            when wait_state =>
                 data3_i <= "1111";
-            when s1 =>
-                data3_i <= data_prevod;      
-            when s2 =>
-                data2_i <= data_prevod;      
-            when s3 =>
-                data1_i <= data_prevod;      
-            when s4 =>
-                data0_i <= data_prevod;     
-            when eval =>
-
+                data2_i <= "1111";
+                data1_i <= "1111";
+                data0_i <= "1111";
+               
         end case;
     end process ;
   
