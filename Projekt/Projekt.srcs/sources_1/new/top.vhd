@@ -45,17 +45,17 @@ begin
             BTN(9)  => SW(9),        --9
             BTN(10) => SW(10),      --cancel
             BTN(11) => SW(11),      --enter
-            dp_i => "1111",
+            dp_i => "1111",         --decimal point
 
             
-            seg_o(6) => CA,             --segmenty displeju
+            seg_o(6) => CA,             --display segment
             seg_o(5) => CB,
             seg_o(4) => CC,
             seg_o(3) => CD,
             seg_o(2) => CE,
             seg_o(1) => CF,
             seg_o(0) => CG,
-            dig_o => AN(4-1 downto 0),  --prepinani displeju
+            dig_o => AN(4-1 downto 0),  --changing display
             
             RGB_led(0)  => led0_b,
             RGB_led(1)  => led0_g,
