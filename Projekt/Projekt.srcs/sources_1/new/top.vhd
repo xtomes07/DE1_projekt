@@ -5,7 +5,7 @@ entity top is
     Port ( 
            CLK100MHZ : in  STD_LOGIC;
            BTNC      : in  STD_LOGIC;
-           SW        : in  STD_LOGIC_VECTOR (16 - 1 downto 0);
+           SW        : in  STD_LOGIC_VECTOR (12 - 1 downto 0);
            CA        : out STD_LOGIC;
            CB        : out STD_LOGIC;
            CC        : out STD_LOGIC;
@@ -14,7 +14,7 @@ entity top is
            CF        : out STD_LOGIC;
            CG        : out STD_LOGIC;
            DP        : out STD_LOGIC;
-           AN        : out STD_LOGIC_VECTOR (8 - 1 downto 0);
+           AN        : out STD_LOGIC_VECTOR (4 - 1 downto 0);
            led0_b    : out STD_LOGIC;
            led0_g    : out STD_LOGIC;
            led0_r    : out STD_LOGIC;
@@ -30,7 +30,6 @@ begin
     -- Instance (copy) of driver_7seg_4digits entity
     Door : entity work.Door_lock_system
         port map(
-            clk        => CLK100MHZ,
             reset      => BTNC,
             clk_disp   => CLK100MHZ,
             

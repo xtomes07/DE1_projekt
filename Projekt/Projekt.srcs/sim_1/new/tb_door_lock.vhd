@@ -8,12 +8,8 @@ entity tb_door_lock is
 end tb_door_lock;
 
 architecture Behavioral of tb_door_lock is     
--- Local constants
-constant c_CLK_100MHZ_PERIOD : time := 50 ns;    
-signal s_clk_100MHz : std_logic;           
+-- Local constants         
 signal BTN_s     :  std_logic_vector(12 - 1 downto 0);                        
---signal pass_s    :  std_logic;    
---signal fail_s    :  std_logic;
 signal dvere_s   :  std_logic;   
 
 --displeje
@@ -31,7 +27,6 @@ signal s_reset : std_logic ;
 begin
 uut_Door_lock_system : entity work.Door_lock_system
         port map(
-            clk     => s_clk_100MHz,
             BTN     =>  BTN_s, 
 
             dvere   => dvere_s,
@@ -48,19 +43,7 @@ uut_Door_lock_system : entity work.Door_lock_system
             
            
         );
---------------------------------------------------------------------
--- Clock generation process
---------------------------------------------------------------------
- p_clk_gen : process
-begin
-        while now < 10000 ns loop   
-            s_clk_100MHz <= '0';
-            wait for c_CLK_100MHZ_PERIOD / 2;
-            s_clk_100MHz <= '1';
-            wait for c_CLK_100MHZ_PERIOD / 2;
-        end loop;
-        wait;
-    end process p_clk_gen;
+
 --------------------------------------------------------------------
 -- Clock generation process
 --------------------------------------------------------------------
@@ -105,31 +88,31 @@ begin
     BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "100000000000"; wait for 100 ns;
        
-    BTN_s <= "000000000000"; wait for 350 ns;
+    BTN_s <= "000000000000"; wait for 300 ns;
   --------------------------------------------------------------------      
         BTN_s <= "000001000000"; wait for 100 ns;
-        
+BTN_s <= "000000000000"; wait for 10 ns;        
         BTN_s <= "000000001000"; wait for 100 ns;
-        
+BTN_s <= "000000000000"; wait for 10 ns;        
         BTN_s <= "000100000000"; wait for 100 ns;
-        
+BTN_s <= "000000000000"; wait for 100 ns;        
         BTN_s <= "000000001000"; wait for 100 ns;
-        
+BTN_s <= "000000000000"; wait for 10 ns;        
         BTN_s <= "100000000000"; wait for 100 ns;
-        
-        BTN_s <= "000000000000"; wait for 100 ns;
+     
+BTN_s <= "000000000000"; wait for 300 ns;
 ---------------------------------------------------------- 
         BTN_s <= "000000100000"; wait for 100 ns;
-        
+BTN_s <= "000000000000"; wait for 10 ns;       
         BTN_s <= "000001000000"; wait for 100 ns;
-        
+ BTN_s <= "000000000000"; wait for 10 ns;       
         BTN_s <= "000010000000"; wait for 100 ns; 
-
+BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000000000100"; wait for 100 ns;
-        
-        BTN_s <= "100000000000"; wait for 100 ns;
+BTN_s <= "000000000000"; wait for 10 ns;        
+        BTN_s <= "010000000000"; wait for 100 ns;
        
-        BTN_s <= "000000000000"; wait for 100 ns;
+BTN_s <= "000000000000"; wait for 100 ns;
   --------------------------------------------------------------------   
 
 

@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_door_lock_behav/xsimk.exe -simmode gui -wdb tb_door_lock_behav.wdb -simrunnum 0 -socket 64198
+Running: xsim.dir/tb_door_lock_behav/xsimk.exe -simmode gui -wdb tb_door_lock_behav.wdb -simrunnum 0 -socket 51925
 Design successfully loaded
-Design Loading Memory Usage: 5864 KB (Peak: 5864 KB)
+Design Loading Memory Usage: 5824 KB (Peak: 5824 KB)
 Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 6560 KB (Peak: 6560 KB)
-Simulation CPU Usage: 31 ms
+Simulation Memory Usage: 7028 KB (Peak: 7028 KB)
+Simulation CPU Usage: 15 ms

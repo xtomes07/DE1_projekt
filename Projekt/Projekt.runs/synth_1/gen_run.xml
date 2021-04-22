@@ -3,6 +3,8 @@
   <File Type="PA-TCL" Name="Door_lock_system.tcl"/>
   <File Type="REPORTS-TCL" Name="Door_lock_system_reports.tcl"/>
   <File Type="RDS-RDS" Name="Door_lock_system.vds"/>
+  <File Type="RDS-UTIL" Name="Door_lock_system_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Door_lock_system_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Door_lock_system.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>

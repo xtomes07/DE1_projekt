@@ -13,9 +13,7 @@ entity Door_lock_system is
         dig_o   : out std_logic_vector(4 - 1 downto 0);
         reset   : in  std_logic; 
         clk_disp: in  std_logic;
-        -----------------------------------------------------------
-        
-        clk     : in  std_logic;
+        ----------------------------------------------------------
         BTN     : in std_logic_vector(12-1 downto 0);
         ---outputs
         dvere    : out std_logic;
@@ -42,25 +40,28 @@ architecture Behavioral of Door_lock_system is
     -- Internal 4-bit value for 7-segment decoder
     signal s_hex : std_logic_vector(4 - 1 downto 0);
     
+    --Signals for data storage from buttons
+    signal data_prevod :   std_logic_vector(4 - 1 downto 0):= b"1111";
+    signal data0_i     :   std_logic_vector(4 - 1 downto 0):= b"1111";
+    signal data1_i     :   std_logic_vector(4 - 1 downto 0):= b"1111";
+    signal data2_i     :   std_logic_vector(4 - 1 downto 0):= b"1111";
+    signal data3_i     :   std_logic_vector(4 - 1 downto 0):= b"1111";
+    --auxiliary signals for outputs
+    signal s_pass      :   std_logic;
+    signal s_fail      :   std_logic;
+    signal s_set      :   std_logic := '0';
+    -- Local delay counter                     
+    signal   s_clk_cnt   : unsigned(12 - 1 downto 0):=b"0000_0000_0000";
+    signal   s_cnt_eval   : unsigned(12 - 1 downto 0):=b"0000_0000_0000";
+    --Constants for LED-colours
+    constant c_RED     : std_logic_vector(3 - 1 downto 0) := b"100";
+    constant c_YELLOW  : std_logic_vector(3 - 1 downto 0) := b"110";
+    constant c_GREEN   : std_logic_vector(3 - 1 downto 0) := b"010";
     -- Specific values for local counter
-    --do dat 0-3 se ukladaji hodnoty tlacite pro 7 seg a data prevod slouzi pro prevod z 
-       signal data_prevod :   std_logic_vector(4 - 1 downto 0);
-       signal data0_i     :   std_logic_vector(4 - 1 downto 0);
-       signal data1_i     :   std_logic_vector(4 - 1 downto 0);
-       signal data2_i     :   std_logic_vector(4 - 1 downto 0);
-       signal data3_i     :   std_logic_vector(4 - 1 downto 0);
-        --signaly pro vystupy
-       signal s_pass      :   std_logic;
-       signal s_fail      :   std_logic;
-       -- Local delay counter                     
-       signal   s_cnt_2     : unsigned(5 - 1 downto 0);--citac k casovaci door lock
-       --zadefinovane barvypro led
-       constant c_RED     : std_logic_vector(3 - 1 downto 0) := b"100";
-       constant c_YELLOW  : std_logic_vector(3 - 1 downto 0) := b"110";
-       constant c_GREEN   : std_logic_vector(3 - 1 downto 0) := b"010";
-       --casovac
-       constant c_DELAY   : unsigned(5 - 1 downto 0) := b"0_1000";      
-       constant c_ZERO    : unsigned(5 - 1 downto 0) := b"0_0000";      
+    constant c_TIMEOUT  : unsigned(12 - 1 downto 0) := b"0001_0010_1100";   
+    constant c_DOORLOCK : unsigned(12 - 1 downto 0) := b"0000_0111_1101";    
+    constant c_ZERO     : unsigned(12 - 1 downto 0) := b"0000_0000_0000";
+    constant c_DOORFAIL : unsigned(12 - 1 downto 0) := b"0000_0010_0000";     
 begin
 
 driver_seg_4 : entity work.driver_7seg_4digits
@@ -80,85 +81,143 @@ clk => clk_disp
         
 
  
-door_lock : process(BTN)      --pin je 5672 hlavni proces
+door_lock : process(clk_disp)      --pin je 5672 hlavni proces
 begin   
+if rising_edge (clk_disp) then
+    if present_state /= wait_state then
+    s_clk_cnt <= s_clk_cnt + 1;
+    end if;
 
-
-                               
-        case next_state is
-            when setValue1 =>
-                present_state<=setValue1;
-                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
-                    next_state<=setValue2;
-                elsif (BTN = "010000000000") then
-                    next_state <=wait_state;
-                elsif (BTN = "100000000000") then
-                    next_state <=eval_state;
-                end if;
-                
-            when setValue2 => 
-                present_state<=setValue2;
-                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
-                    next_state<=setValue3;
-                elsif (BTN = "010000000000") then
-                    next_state <=wait_state;
-                elsif (BTN = "100000000000") then
-                    next_state <=eval_state;
-                end if;
-                
-            when setValue3 => 
-                present_state<=setValue3;
-                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
-                    next_state<=setValue4;
-                elsif (BTN = "010000000000") then
-                    next_state <=wait_state;
-                elsif (BTN = "100000000000") then
-                    next_state <=eval_state;
-                end if;
-                
-            when setValue4 => 
-                present_state<=setValue4;
-                if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
-                    next_state<=eval_state;
-                elsif (BTN = "010000000000") then
-                    next_state <=wait_state;
-                elsif (BTN = "100000000000") then
-                    next_state <=eval_state;
-                end if;
-           when eval_state =>
-                present_state<=eval_state;
-                if (BTN ="100000000000") then
-                    if (data3_i = "0101" and data2_i = "0110" and data1_i = "0111" and data0_i = "0010") then
-                        s_pass <= '1';
-                        next_state <= wait_state;
-                    else
-                        s_fail <= '1';
-                        next_state <= wait_state;
-                    end if;
-                elsif (BTN = "010000000000") then
-                    next_state <=wait_state; 
-                elsif (BTN /= "100000000000") and (BTN /= "010000000000")and (BTN /= "000000000000") then
-                    s_fail <= '1';
-                    s_pass <= '0';
-                    next_state <=wait_state;
-                end if;
-           when wait_state =>
-                s_fail <= '0';
-                s_pass <= '0';
-                present_state <= wait_state;
-                next_state <= setValue1;
-         end case; 
-   
+    if s_clk_cnt > C_TIMEOUT then
+    s_clk_cnt <= c_ZERO;
+    next_state <= eval_state;
+    end if;
+  -----------------------------------------------  
+    if present_state = eval_state then
+    s_cnt_eval <= s_cnt_eval + 1;
+    end if;
+    if s_pass = '1' then
+        if s_cnt_eval > c_DOORLOCK then
+        next_state <= wait_state;
+        end if;
+    elsif  s_fail = '1' then
+        if s_cnt_eval > c_DOORFAIL then
+        next_state <= wait_state;
+        end if;
+   end if; 
+        
+        if s_set='0' then  
+             case next_state is 
+                 when setValue1 =>      
+                     present_state<=setValue1;
+                     if s_set='0' then
+                         if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                             s_set <= '1';
+                             next_state<=setValue2;
+                         elsif (BTN = "010000000000") then
+                             next_state <=wait_state;
+                             s_set <= '1';
+                         elsif (BTN = "100000000000") then
+                             next_state <=eval_state;
+                             s_set <= '1';
+                         end if;
+                     end if;
+                 when setValue2 => 
+                         present_state<=setValue2;
+                         if s_set='0' then
+                         if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                             s_set <= '1';
+                             next_state<=setValue3;
+                         elsif (BTN = "010000000000") then
+                             next_state <=wait_state;
+                             s_set <= '1';
+                         elsif (BTN = "100000000000") then
+                             next_state <=eval_state;
+                             s_set <= '1';
+                         end if;
+                  end if;        
+                 when setValue3 =>
+                 if s_set='0' then 
+                         present_state<=setValue3;
+                         if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                             s_set <= '1';
+                             next_state<=setValue4;
+                         elsif (BTN = "010000000000") then
+                             next_state <=wait_state;
+                             s_set <= '1';
+                         elsif (BTN = "100000000000") then
+                             next_state <=eval_state;
+                             s_set <= '1';                  
+                         end if;
+                  end if;
+                 when setValue4 =>
+                 if s_set='0' then 
+                         present_state<=setValue4;
+                         if (BTN /="000000000000") and (BTN /="010000000000") and (BTN /="100000000000") then
+                             s_set <= '1';
+                             next_state<=eval_state;
+                         elsif (BTN = "010000000000") then
+                             next_state <=wait_state;
+                             s_set <= '1';
+                         elsif (BTN = "100000000000") then
+                             next_state <=eval_state;
+                             s_set <= '1';
+                         end if;
+                 end if;
+                 when eval_state =>
+                 present_state<=eval_state;
+                 if s_set='0' then
+                     if (BTN ="100000000000") then
+                         if (data3_i = "0101" and data2_i = "0110" and data1_i = "0111" and data0_i = "0010") then
+                             s_set <= '1';
+                             s_pass <= '1';
+                         else
+                             s_set <= '1';
+                             s_fail <= '1';
+                         end if;
+                     elsif (BTN = "010000000000") then
+                         s_set <= '1';
+                         s_fail <= '1';
+                         s_pass <= '0';
+                     elsif (BTN /= "100000000000") and (BTN /= "010000000000")and (BTN /= "000000000000") then
+                         s_set <= '1';
+                         s_fail <= '1';
+                         s_pass <= '0';
+                    elsif (data3_i = "1111" or data2_i = "1111" or data1_i = "1111" or data0_i = "1111") then
+                         s_set <='1';
+                         s_fail <= '1';
+                         s_pass <= '0';
+                        end if;
+                     end if;
+                 
+                 when wait_state =>
+                     s_cnt_eval <= c_ZERO;   
+                     s_clk_cnt <= c_ZERO;
+                     s_fail <= '0';
+                     s_pass <= '0';
+                     s_set<= '0';
+                     present_state <= wait_state;
+                     if (BTN /= "000000000000") and data_prevod /= "1111" then
+                     next_state <= setValue1; 
+                     end if;           
+                end case; 
+         elsif BTN = "000000000000" then
+              s_set <= '0';        
+         end if;
+         
+         
+      
+end if;
 end process;
 
-p_prevod_12btn_to_4digit : process(clk_disp) --tlacitko se prevede na hodnotu pro 7segmentovku
-    begin
+p_transfer_12btn_to_4digit : process(clk_disp) --button is converted to the value for 7segmet display
+begin
     
         case BTN is
-            when "000000000000" =>          -- PRAZDNO NEBUDE ZADNE ZOBRAZENE CISLO
-               data_prevod <= "1111"; 
+            when "000000000000" =>          
+               data_prevod <= "1111";       --empty display
             when "000000000001" =>
-                data_prevod <= "0000";      -- 0
+                data_prevod <= "0000";      --0
             when "000000000010" =>
                 data_prevod <= "0001";      --1
             when "000000000100" =>
@@ -178,45 +237,43 @@ p_prevod_12btn_to_4digit : process(clk_disp) --tlacitko se prevede na hodnotu pr
             when "001000000000" =>
                 data_prevod <= "1001";      --9
             when others =>
-                     
-                  
-    
         end case;
-    end process ;
+end process ;
     
-    p_ukladani : process(clk_disp) --ukladani tlacitka 
-    begin
-       
-        case present_state is
-            when setValue1 =>  
-                if BTN /= "000000000000" then
-                    data3_i <= data_prevod;
-                end if;
-            when setValue2 =>
-                if BTN /= "000000000000" then                       
-                    data2_i <= data_prevod;  
-                end if;    
-            when setValue3 =>
-                if BTN /= "000000000000" then
-                    data1_i <= data_prevod; 
-                end if;   
-            when setValue4 =>
-                if BTN /= "000000000000" then
-                    data0_i <= data_prevod; 
-                end if;   
-            when eval_state =>  
-            when wait_state =>
-                data3_i <= "1111";
-                data2_i <= "1111";
-                data1_i <= "1111";
-                data0_i <= "1111";
-               
-        end case;
+p_saveValue : process(clk_disp) -- save value from button to memories
+begin
+        if rising_edge(clk_disp)  then
+            case present_state is
+                when setValue1 =>  
+                    if BTN /= "000000000000" then
+                        data3_i <= data_prevod;
+                    end if;
+                when setValue2 =>
+                    if BTN /= "000000000000" then                       
+                        data2_i <= data_prevod;  
+                    end if;    
+                when setValue3 =>
+                    if BTN /= "000000000000" then
+                        data1_i <= data_prevod; 
+                    end if;   
+                when setValue4 =>
+                    if BTN /= "000000000000" then
+                        data0_i <= data_prevod; 
+                    end if;   
+                when eval_state => 
+                    
+                when wait_state =>
+                    data3_i <= "1111";
+                    data2_i <= "1111";
+                    data1_i <= "1111";
+                    data0_i <= "1111";            
+            end case;
+       end if;
     end process ;
   
- p_vystupy : process(clk_disp) --ovladani RGB_ledky
+ p_outputs : process(clk_disp) --control outputs         
     begin
-        if (s_pass = '1') then
+        if (s_pass = '1') then          
             RGB_led <= c_GREEN;
             dvere <= '1';
         elsif (s_pass = '0' and s_fail = '0')then

@@ -2,9 +2,9 @@
 2020.2
 Nov 18 2020
 09:47:47
-C:/Users/Client/Desktop/Projekt/Projekt.srcs/sim_1/new/tb_door_lock.vhd,1618608786,vhdl,,,,tb_door_lock,,,,,,,,
-C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/Door_lock_system.vhd,1618611118,vhdl,C:/Users/Client/Desktop/Projekt/Projekt.srcs/sim_1/new/tb_door_lock.vhd,,,door_lock_system,,,,,,,,
-C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/clock_enable.vhd,1615385900,vhdl,C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,,,clock_enable,,,,,,,,
-C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/cnt_up_down.vhd,1615398546,vhdl,C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,,,cnt_up_down,,,,,,,,
-C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/hex_7seg.vhd,1618311590,vhdl,C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,,,hex_7seg,,,,,,,,
-C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,1616014983,vhdl,C:/Users/Client/Desktop/Projekt/Projekt.srcs/sources_1/new/Door_lock_system.vhd,,,driver_7seg_4digits,,,,,,,,
+C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sim_1/new/tb_door_lock.vhd,1619099215,vhdl,,,,tb_door_lock,,,,,,,,
+C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/Door_lock_system.vhd,1619100708,vhdl,C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sim_1/new/tb_door_lock.vhd,,,door_lock_system,,,,,,,,
+C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/clock_enable.vhd,1615385900,vhdl,C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,,,clock_enable,,,,,,,,
+C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/cnt_up_down.vhd,1615398546,vhdl,C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,,,cnt_up_down,,,,,,,,
+C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/hex_7seg.vhd,1618311590,vhdl,C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,,,hex_7seg,,,,,,,,
+C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd,1616014983,vhdl,C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/Door_lock_system.vhd,,,driver_7seg_4digits,,,,,,,,

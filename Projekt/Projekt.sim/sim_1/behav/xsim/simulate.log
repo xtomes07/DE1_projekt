@@ -1,4 +1,6 @@
 Vivado Simulator 2020.2
 Time resolution is 1 ps
 Note: Stimulus process started
-Time: 0 ps  Iteration: 0  Process: /tb_door_lock/p_stimulus  File: C:/Users/Client/Desktop/Projekt/Projekt.srcs/sim_1/new/tb_door_lock.vhd
+Time: 0 ps  Iteration: 0  Process: /tb_door_lock/p_stimulus  File: C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sim_1/new/tb_door_lock.vhd
+Note: Stimulus process finished
+Time: 2510 ns  Iteration: 0  Process: /tb_door_lock/p_stimulus  File: C:/Users/Client/Desktop/Vysoka_skola/4. Semestr/DE1/Cvika/PROJEKT/DE1_projekt/Projekt/Projekt.srcs/sim_1/new/tb_door_lock.vhd
