@@ -2,13 +2,15 @@
 
 ### Team members
 
-Names of all project team members.
+Jiří Tomešek, Ivo Točený
 
-[Link to your GitHub project folder]( http://github.com/xxx)
+[Link to GitHub project folder]( https://github.com/xtomes07/DE1_projekt)
 
 ### Project objectives
 
-Write your text here.
+Tento projekt si klade za cíl především implementovat systém zámku dveří pomocí programovacího jazyka VHDL. Zadávání hodnot PINu bude realizováno pomocí 4x4 klávesnice, zadaný 
+PIN se pak bude zobrazovat na čtyřech sedmi segmentových displejích. Jestli byl zadán správný PIN bude pak následně signalizovat RGB LED dioda, která bude měnit barvy na základě 
+správnosti PINu. 
 
 
 ## Hardware description
