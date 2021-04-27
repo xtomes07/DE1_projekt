@@ -20,7 +20,7 @@ Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod 
 0-9 a tlačítky Enter a Cancel pro zadávání pinu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly charakter LOW a kvůli ušetření 
 pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by je v cyklu aktivovali a poté zas deaktivovali a to v takové rychlosti, aby to lidské oko 
 nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo relé, které by pak dále ovládalo samotný zámek dveří. Schéma zapojení desky by mohlo 
-vypadat následovně:
+vypadat následovně:![Schema]( https://github.com/xtomes07/DE1_projekt/blob/main/Deska_schem.jpg)
 
 ## VHDL modules description and simulations
 
