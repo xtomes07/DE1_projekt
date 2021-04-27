@@ -21,6 +21,7 @@ Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod 
 pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by je v cyklu aktivovali a poté zas deaktivovali a to v takové rychlosti, aby to lidské oko 
 nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo relé, které by pak dále ovládalo samotný zámek dveří. Schéma zapojení desky by mohlo 
 vypadat následovně:![Schema]( https://github.com/xtomes07/DE1_projekt/blob/main/Deska_schem.jpg)
+V levo jsou čtyři dvanáctipinnové konektory, jejichž piny 1-8 jsou vstupy nebo výstupy, 9-10 je GND a 11-12 Vcc.
 
 ## VHDL modules description and simulations
 
