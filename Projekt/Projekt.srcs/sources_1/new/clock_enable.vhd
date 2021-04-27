@@ -48,14 +48,14 @@ architecture Behavioral of clock_enable is
     signal s_cnt_local : natural;
 
 begin
-    --------------------------------------------------------------------
-    -- p_clk_ena:
-    -- Generate clock enable signal. By default, enable signal is low 
-    -- and generated pulse is always one clock long.
-    --------------------------------------------------------------------
-    p_clk_ena : process(clk)
-    begin
-        if rising_edge(clk) then        -- Synchronous process
+--------------------------------------------------------------------
+-- p_clk_ena:
+-- Generate clock enable signal. By default, enable signal is low 
+-- and generated pulse is always one clock long.
+--------------------------------------------------------------------
+p_clk_ena : process(clk)
+begin
+   if rising_edge(clk) then        -- Synchronous process
 
             if (reset = '1') then       -- High active reset
                 s_cnt_local <= 0;       -- Clear local counter
@@ -71,6 +71,6 @@ begin
                 ce_o        <= '0';
             end if;
         end if;
-    end process p_clk_ena;
+end process p_clk_ena;
 
 end architecture Behavioral;

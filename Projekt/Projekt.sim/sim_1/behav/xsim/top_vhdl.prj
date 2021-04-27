@@ -4,6 +4,7 @@ vhdl xil_defaultlib  \
 "../../../../Projekt.srcs/sources_1/new/cnt_up_down.vhd" \
 "../../../../Projekt.srcs/sources_1/new/hex_7seg.vhd" \
 "../../../../Projekt.srcs/sources_1/new/river_7seg_4digits.vhd" \
+"../../../../Projekt.srcs/sources_1/new/Door_lock_system.vhd" \
 "../../../../Projekt.srcs/sources_1/new/top.vhd" \
 
 # Do not sort compile order

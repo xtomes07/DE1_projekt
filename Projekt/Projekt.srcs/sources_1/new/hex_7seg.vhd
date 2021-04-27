@@ -71,7 +71,7 @@ begin
             when "1001" =>
                 seg_o <= "0000100";     -- 9
             when others =>
-                seg_o <= "1111111";     -- nic
+                seg_o <= "1111111";     -- nothing
        
         end case;
     end process p_7seg_decoder;

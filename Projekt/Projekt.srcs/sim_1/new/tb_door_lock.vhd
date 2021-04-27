@@ -9,10 +9,10 @@ end tb_door_lock;
 
 architecture Behavioral of tb_door_lock is     
 -- Local constants         
-signal BTN_s     :  std_logic_vector(12 - 1 downto 0);                        
+signal BTN_s     :  std_logic_vector(12 - 1 downto 0);       --button from panel                 
 signal dvere_s   :  std_logic;   
 
---displeje
+--display
 constant c_CLK_100MHZ_PERIOD_disp : time    := 2 ns;                              
 signal s_clk_100MHz_disp : std_logic;                                      
 signal s_reset : std_logic ;                    

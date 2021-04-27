@@ -5,7 +5,7 @@ entity top is
     Port ( 
            CLK100MHZ : in  STD_LOGIC;
            BTNC      : in  STD_LOGIC;
-           SW        : in  STD_LOGIC_VECTOR (12 - 1 downto 0);
+           BTN        : in  STD_LOGIC_VECTOR (12 - 1 downto 0);
            CA        : out STD_LOGIC;
            CB        : out STD_LOGIC;
            CC        : out STD_LOGIC;
@@ -18,7 +18,7 @@ entity top is
            led0_b    : out STD_LOGIC;
            led0_g    : out STD_LOGIC;
            led0_r    : out STD_LOGIC;
-           zamek     : out STD_LOGIC
+           door_lock     : out STD_LOGIC
            );
 end top;
 
@@ -33,18 +33,18 @@ begin
             reset      => BTNC,
             clk_disp   => CLK100MHZ,
             
-            BTN(0)  => SW(0),        --0    --vstupni klavesnice
-            BTN(1)  => SW(1),
-            BTN(2)  => SW(2),
-            BTN(3)  => SW(3),
-            BTN(4)  => SW(4),
-            BTN(5)  => SW(5),
-            BTN(6)  => SW(6),
-            BTN(7)  => SW(7),
-            BTN(8)  => SW(8),
-            BTN(9)  => SW(9),        --9
-            BTN(10) => SW(10),      --cancel
-            BTN(11) => SW(11),      --enter
+            BTN(0)  => BTN(0),        --0    --vstupni klavesnice
+            BTN(1)  => BTN(1),
+            BTN(2)  => BTN(2),
+            BTN(3)  => BTN(3),
+            BTN(4)  => BTN(4),
+            BTN(5)  => BTN(5),
+            BTN(6)  => BTN(6),
+            BTN(7)  => BTN(7),
+            BTN(8)  => BTN(8),
+            BTN(9)  => BTN(9),        --9
+            BTN(10) => BTN(10),      --cancel
+            BTN(11) => BTN(11),      --enter
             dp_i => "1111",         --decimal point
 
             
@@ -61,7 +61,7 @@ begin
             RGB_led(1)  => led0_g,
             RGB_led(2)  => led0_r,
             
-            dvere       => zamek
+            door       => door_lock
         );
 
 

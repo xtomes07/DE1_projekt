@@ -63,11 +63,9 @@ begin
     -- every 4 ms
     clk_en0 : entity work.clock_enable
         generic map(
-            --- WRITE YOUR CODE HERE
             g_MAX => 4 
         )
         port map(
-            --- WRITE YOUR CODE HERE
             clk => clk,
             reset => reset,
             ce_o => s_en
@@ -83,7 +81,7 @@ begin
         )
         port map(
              clk       => clk,
-             reset     => reset,
+             reset => reset,
              en_i      => s_en,
              cnt_up_i  => '0',
              cnt_o     => s_cnt

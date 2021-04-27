@@ -4,20 +4,15 @@ use ieee.numeric_std.all;
 
 entity Door_lock_system is
     Port (
-        dp_i    : in  std_logic_vector(4 - 1 downto 0);
-        -- Decimal point for specific digit
+        dp_i    : in  std_logic_vector(4 - 1 downto 0);     -- Decimal point for specific digit
         dp_o    : out std_logic;
-        -- Cathode values for individual segments
-        seg_o   : out std_logic_vector(7 - 1 downto 0);
-        -- Common anode signals to individual displays
-        dig_o   : out std_logic_vector(4 - 1 downto 0);
+        seg_o   : out std_logic_vector(7 - 1 downto 0);     -- Cathode values for individual segments
+        dig_o   : out std_logic_vector(4 - 1 downto 0);     -- Common anode signals to individual displays
         reset   : in  std_logic; 
         clk_disp: in  std_logic;
-        ----------------------------------------------------------
-        BTN     : in std_logic_vector(12-1 downto 0);
+        BTN     : in std_logic_vector(12-1 downto 0);       --button from keyboard
         ---outputs
-        dvere    : out std_logic;
-        
+        door    : out std_logic;
         RGB_led : out std_logic_vector(3-1 downto 0)
         
      );
@@ -210,7 +205,7 @@ if rising_edge (clk_disp) then
 end if;
 end process;
 
-p_transfer_12btn_to_4digit : process(clk_disp) --button is converted to the value for 7segmet display
+p_transfer_12btn_to_4digit : process(clk_disp, BTN) --button is converted to the value for 7segmet display
 begin
     
         case BTN is
@@ -260,8 +255,7 @@ begin
                     if BTN /= "000000000000" then
                         data0_i <= data_prevod; 
                     end if;   
-                when eval_state => 
-                    
+                when eval_state =>   
                 when wait_state =>
                     data3_i <= "1111";
                     data2_i <= "1111";
@@ -275,13 +269,13 @@ begin
     begin
         if (s_pass = '1') then          
             RGB_led <= c_GREEN;
-            dvere <= '1';
+            door <= '1';
         elsif (s_pass = '0' and s_fail = '0')then
             RGB_led <= c_YELLOW;
-            dvere <= '0';
+            door <= '0';
         else
             RGB_led <= c_RED;
-            dvere <= '0';
+            door <= '0';
         end if;
     end process ;
     

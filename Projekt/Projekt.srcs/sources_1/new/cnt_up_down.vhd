@@ -38,14 +38,14 @@ architecture behavioral of cnt_up_down is
     signal s_cnt_local : unsigned(g_CNT_WIDTH - 1 downto 0);
 
 begin
-    --------------------------------------------------------------------
-    -- p_cnt_up_down:
-    -- Clocked process with synchronous reset which implements n-bit 
-    -- up/down counter.
-    --------------------------------------------------------------------
-    p_cnt_up_down : process(clk)
-    begin
-        if rising_edge(clk) then
+--------------------------------------------------------------------
+-- p_cnt_up_down:
+-- Clocked process with synchronous reset which implements n-bit 
+-- up/down counter.
+--------------------------------------------------------------------
+p_cnt_up_down : process(clk)
+begin
+if rising_edge(clk) then
         
             if (reset = '1') then               -- Synchronous reset
                 s_cnt_local <= (others => '0'); -- Clear all bits
@@ -65,9 +65,9 @@ begin
 
             end if;
         end if;
-    end process p_cnt_up_down;
+end process p_cnt_up_down;
 
-    -- Output must be retyped from "unsigned" to "std_logic_vector"
-    cnt_o <= std_logic_vector(s_cnt_local);
+-- Output must be retyped from "unsigned" to "std_logic_vector"
+cnt_o <= std_logic_vector(s_cnt_local);
 
 end architecture behavioral;
