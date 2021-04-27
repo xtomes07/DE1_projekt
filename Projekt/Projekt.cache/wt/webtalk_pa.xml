@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Apr 27 01:04:00 2021">
+<application name="pa" timeStamp="Tue Apr 27 02:30:25 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="367fa177de1342708276eec6b1229144" type="ProjectID"/>
 <property name="ProjectIteration" value="2" type="ProjectIteration"/>
@@ -21,7 +21,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CloseProject" value="4" type="JavaHandler"/>
 <property name="CreateBlockDesign" value="1" type="JavaHandler"/>
 <property name="EditDelete" value="9" type="JavaHandler"/>
-<property name="ExitApp" value="23" type="JavaHandler"/>
+<property name="ExitApp" value="24" type="JavaHandler"/>
 <property name="NewProject" value="2" type="JavaHandler"/>
 <property name="OpenProject" value="2" type="JavaHandler"/>
 <property name="RunImplementation" value="3" type="JavaHandler"/>
@@ -53,7 +53,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CreateConstraintsFilePanel_FILE_NAME" value="1" type="GuiHandlerData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="8" type="GuiHandlerData"/>
 <property name="ExpReportTreePanel_EXP_REPORT_TREE_TABLE" value="1" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="558" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="563" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="158" type="GuiHandlerData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="2" type="GuiHandlerData"/>
 <property name="GettingStartedView_OPEN_EXAMPLE_PROJECT" value="1" type="GuiHandlerData"/>
@@ -121,14 +121,14 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT" value="5" type="GuiHandlerData"/>
 <property name="SrcChooserPanel_CREATE_FILE" value="9" type="GuiHandlerData"/>
 <property name="SrcMenu_IP_HIERARCHY" value="19" type="GuiHandlerData"/>
-<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="12" type="GuiHandlerData"/>
+<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="13" type="GuiHandlerData"/>
 <property name="TaskBanner_CLOSE" value="111" type="GuiHandlerData"/>
 <property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="210" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="39" type="GuiMode"/>
+<property name="GuiMode" value="40" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="36" type="TclMode"/>
+<property name="TclMode" value="37" type="TclMode"/>
 </item>
 </section>
 </application>
