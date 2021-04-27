@@ -16,9 +16,11 @@ aby nemohl být zneužit.
 
 ## Hardware description
 
-Arty A7-100T
-4 Sedmi segmentové displeje
-4x4 klávesnice
+Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 4x4 klávesnice s čísly 
+0-9 a tlačítky Enter a Cancel pro zadávání pinu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly charakter LOW a kvůli ušetření 
+pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by je v cyklu aktivovali a poté zas deaktivovali a to v takové rychlosti, aby to lidské oko 
+nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo relé, které by pak dále ovládalo samotný zámek dveří. Schéma zapojení desky by mohlo 
+vypadat následovně:
 
 ## VHDL modules description and simulations
 
