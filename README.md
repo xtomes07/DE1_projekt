@@ -53,6 +53,11 @@ Schéma TOP modulu:
 Simulace top modulu:
 ![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/top_simulace.PNG)
 
+## State diagram
+
+Stavový diagram:
+![Stavový diagram]( https://github.com/xtomes07/DE1_projekt/blob/main/state_diagram.png)
+
 ## Video
 
 Odkaz na naši video prezentaci:
