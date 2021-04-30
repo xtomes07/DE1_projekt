@@ -34,6 +34,7 @@ tvořen 6 stavy. 4 stavy jsou pro ukádaní hodnot(setValue_state0-3), jeden vyh
 nesnaží odemknout dveře. Jsou zde také čítače, čítač s_clk_cnt se spouští, když se začne zadávat PIN a omezuje dobu, po kterou uživatel můsí zvládnout zadat PIN, když se uživali 
 nepodaří zadat včat PIN, čítač vynuluje paměti a vrátí se do čekacího stavu. Další čítač s_cnt_eval se spouští ve vyhodnocovacím stavu a slouží k tomu, že dveře zůstanou odemklé
 po námi zvolenou dobu a poté se zase zamknou.
+
 [Odkaz na vhdl kód modulu driver_7seg_4digits]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd)
 
 [Odkaz na vhdl kód modulu clock_enable]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/clock_enable.vhd)
