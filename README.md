@@ -1,6 +1,6 @@
 # Door lock with 4x3 matrix keyboard
 
-### Členové týmu
+### Team members
 Ondřej Smola (217628), Jiří Tomešek (220785), Ivo Točený (222683), Jiří Vahalík (220490)
 
 [Link to our GitHub project folder]( https://github.com/xtomes07/DE1_projekt)
@@ -24,19 +24,19 @@ Pmod konektory na desce Arty A7 a jejich piny:
 ## VHDL modules description and simulations
 
 Odkaz na vhdl kód modulu driver_7seg_4digits:
-[driver_7seg_4digits]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/river_7seg_4digits.vhd)
+[driver_7seg_4digits]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd)
 
 Odkaz na vhdl kód modulu clock_enable:
-[clock_enable]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/clock_enable.vhd)
+[clock_enable]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/clock_enable.vhd)
 
 Odkaz na vhdl kód modulu cnt_up_down:
-[cnt_up_down]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/cnt_up_down.vhd)
+[cnt_up_down]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/cnt_up_down.vhd)
 
 Odkaz na vhdl kód modulu hex_7seg:
-[cnt_up_down]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/hex_7seg.vhd)
+[cnt_up_down]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/hex_7seg.vhd)
 
 Odkaz na vhdl kód modulu Door_lock_system:
-[cnt_up_down]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/Door_lock_system.vhd)
+[cnt_up_down]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/Door_lock_system.vhd)
 
 Simulace modulu Door_lock system:
 ![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/doorlock_modul.PNG)
