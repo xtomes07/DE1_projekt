@@ -29,8 +29,8 @@ Write your text here.
 
 
 ## TOP module description and simulations
-
-Write your text here.
+Schéma TOP modulu:
+![Schema]( https://github.com/xtomes07/DE1_projekt/blob/main/Top_door_lock_system.png)
 
 
 ## Video
