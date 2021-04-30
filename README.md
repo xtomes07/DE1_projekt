@@ -63,6 +63,9 @@ Stavový diagram:
 Odkaz na naši video prezentaci:
 ![Video]()
 
+## Discussion of results
+
+Vokec...
 
 ## References
 
