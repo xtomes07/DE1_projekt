@@ -1,9 +1,9 @@
 # Door lock with 4x3 matrix keyboard
 
 ### Členové týmu
-Ondřej Smola (217628), Jiří Tomešek (220785), Ivo Točený (222683), Jiří Vahalík ()
+Ondřej Smola (217628), Jiří Tomešek (220785), Ivo Točený (222683), Jiří Vahalík (220490)
 
-[Link to your GitHub project folder]( https://github.com/xtomes07/DE1_projekt)
+[Link to our GitHub project folder]( https://github.com/xtomes07/DE1_projekt)
 
 ### Project objectives
 
