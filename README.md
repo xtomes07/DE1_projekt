@@ -18,7 +18,8 @@ aby nemohl být zneužit.
 Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 4x4 klávesnice s čísly 
 0-9 a tlačítky Enter a Cancel pro zadávání PINu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly charakter LOW a kvůli ušetření 
 pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by je v cyklu aktivovaly a poté zas deaktivovaly a to v takové rychlosti, aby to lidské oko 
-nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo NC relé(normally close), které by pak dále ovládalo samotný zámek dveří. Schéma zapojení desky by mohlo vypadat následovně:
+nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo NC relé(normally close), které by pak dále ovládalo samotný zámek dveří. Schéma zapojení 
+desky by mohlo vypadat následovně:
 ![Schema]( https://github.com/xtomes07/DE1_projekt/blob/main/Deska_schem.jpg)
 Přiřazení k pinům:
 ![Zapojeni]( https://github.com/xtomes07/DE1_projekt/blob/main/ZAPOJENI.png)
@@ -26,11 +27,13 @@ Pmod konektory na desce Arty A7 a jejich piny:
 ![Piny]( https://github.com/xtomes07/DE1_projekt/blob/main/piny_na_arty.PNG)
 
 ## VHDL modules description and simulations
-Pro ovládání displejů byly použity moduly, které jsme vytvářeli v hodinách DE1(Driver 7seg 4digits, clock enable, cnt up down, hex 7seg). Dále jsme vytvoři vlastní modul 
+Pro ovládání displejů byly použity moduly, které jsme vytvářeli v hodinách DE1 (Driver 7seg 4digits, clock enable, cnt up down, hex 7seg). Dále jsme vytvoři vlastní modul 
 Door_lock_system, který obsahuje proces na setování tlačítek z klávesnice do pamětí data0_i až data3_i. Dále obsahuje proces, který nám převadí 12bitový vektor BTN, který 
-interpretuje tlačítka z klávesnice na 4 bitovou hodnotu, která se poté využívá k zobrazení PINu na displej a vyhodnoceni jestli byl PIN spárvný nebo ne. Hlavní proces je tvořen
-6 stavy. 4 stavy jsou pro ukádaní hodnot(setValue_state0-3), jeden vyhodnocovací (eval_state) a čekací stav(wait_state),ve kterém systém setrvává v době, když se uživatel 
-nesnaží odemknout dveře. Jsou zde také čítače, čítač c_Door
+interpretuje tlačítka z klávesnice na 4 bitovou hodnotu, která se poté využívá k zobrazení PINu na displeji a vyhodnocení, jestli byl PIN spárvný nebo ne. Hlavní proces je
+tvořen 6 stavy. 4 stavy jsou pro ukádaní hodnot(setValue_state0-3), jeden vyhodnocovací (eval_state) a čekací stav(wait_state),ve kterém systém setrvává v době, když se uživatel 
+nesnaží odemknout dveře. Jsou zde také čítače, čítač s_clk_cnt se spouští, když se začne zadávat PIN a omezuje dobu, po kterou uživatel můsí zvládnout zadat PIN, když se uživali 
+nepodaří zadat včat PIN, čítač vynuluje paměti a vrátí se do čekacího stavu. Další čítač s_cnt_eval se spouští ve vyhodnocovacím stavu a slouží k tomu, že dveře zůstanou odemklé
+po námi zvolenou dobu a poté se zase zamknou.
 [Odkaz na vhdl kód modulu driver_7seg_4digits]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/river_7seg_4digits.vhd)
 
 [Odkaz na vhdl kód modulu clock_enable]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/clock_enable.vhd)
