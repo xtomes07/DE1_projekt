@@ -44,9 +44,14 @@ Simulace modulu Door_lock system:
 
 ## TOP module description and simulations
 
+Odkaz na vhdl kód top modulu:
+[top]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/top.vhd)
+
 Schéma TOP modulu:
 ![Schema](https://github.com/xtomes07/DE1_projekt/blob/main/top_schema.png)
 
+Simulace top modulu:
+![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/top_simulace.PNG)
 
 ## Video
 
