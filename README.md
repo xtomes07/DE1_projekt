@@ -24,7 +24,7 @@ Pmod konektory na desce Arty A7 a jejich piny:
 ## VHDL modules description and simulations
 
 Odkaz na vhdl kód modulu driver_7seg_4digits:
-[driver_7seg_4digits]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/river_7seg_4digits.vhd)
+[driver_7seg_4digits]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/river_7seg_4digits.vhd)
 
 Odkaz na vhdl kód modulu clock_enable:
 [clock_enable]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/clock_enable.vhd)
