@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Apr 30 17:42:10 2021
+# Process ID: 2824
+# Current directory: D:/DE1-projekt/DE1_projekt/Projekt
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3928 D:\DE1-projekt\DE1_projekt\Projekt\Projekt.xpr
+# Log file: D:/DE1-projekt/DE1_projekt/Projekt/vivado.log
+# Journal file: D:/DE1-projekt/DE1_projekt/Projekt\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/DE1-projekt/DE1_projekt/Projekt/Projekt.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/DE1-projekt/DE1_projekt/Projekt/tb_door_lock_behav.wcfg
+source tb_door_lock.tcl
+close_sim

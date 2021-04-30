@@ -3,22 +3,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity top is
     Port ( 
-           CLK100MHZ : in  STD_LOGIC;
-           BTNC      : in  STD_LOGIC;
-           BTN        : in  STD_LOGIC_VECTOR (12 - 1 downto 0);
-           CA        : out STD_LOGIC;
+           CLK100MHZ : in  STD_LOGIC;                            -- clock
+           BTNC      : in  STD_LOGIC;                            -- hard reset
+           BTN        : in  STD_LOGIC_VECTOR (12 - 1 downto 0);  -- 0->9 + cancel + enter
+           CA        : out STD_LOGIC;                            -- 7seg
            CB        : out STD_LOGIC;
            CC        : out STD_LOGIC;
            CD        : out STD_LOGIC;
            CE        : out STD_LOGIC;
            CF        : out STD_LOGIC;
            CG        : out STD_LOGIC;
-           DP        : out STD_LOGIC;
-           AN        : out STD_LOGIC_VECTOR (4 - 1 downto 0);
-           led0_b    : out STD_LOGIC;
+           DP        : out STD_LOGIC;                            -- Decimal point
+           AN        : out STD_LOGIC_VECTOR (4 - 1 downto 0);    -- Current display of 7seg of 4 pin values
+           led0_b    : out STD_LOGIC;                            -- LEDs rgb
            led0_g    : out STD_LOGIC;
            led0_r    : out STD_LOGIC;
-           door_lock     : out STD_LOGIC
+           door_lock     : out STD_LOGIC                         -- Open/close door
            );
 end top;
 

@@ -8,16 +8,18 @@ end tb_top;
 
 architecture Behavioral of tb_top is
 signal BTN_s     :  std_logic_vector(12 - 1 downto 0);                        
-signal dvere_s   :  std_logic;   
+signal door_s   :  std_logic;   
 
 --displeje
 constant c_CLK_100MHZ_PERIOD_disp : time    := 2 ns;                              
 signal s_clk_100MHz_disp : std_logic;                                      
 signal s_reset : std_logic ;                    
                                                 
-                                                
+ --decimal point input/output                                                
  signal s_dp_i : std_logic_vector(4-1 downto 0);
- signal s_dp_o : std_logic;                     
+ signal s_dp_o : std_logic;         
+ 
+ --display for 7seg and current number to show             
  signal s_seg  : std_logic_vector(7-1 downto 0);
  signal s_dig  : std_logic_vector(4-1 downto 0);    
 begin
@@ -26,7 +28,7 @@ uut_top : entity work.top
         port map(
             BTN     =>  BTN_s, 
             CLK100MHZ => s_clk_100MHz_disp,
-            door_lock   => dvere_s,
+            door_lock   => door_s,
             BTNC   => s_reset      
             
            

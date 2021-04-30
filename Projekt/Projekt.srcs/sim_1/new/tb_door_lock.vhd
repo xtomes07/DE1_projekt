@@ -10,16 +10,20 @@ end tb_door_lock;
 architecture Behavioral of tb_door_lock is     
 -- Local constants         
 signal BTN_s     :  std_logic_vector(12 - 1 downto 0);       --button from panel                 
-signal dvere_s   :  std_logic;   
+signal door_s   :  std_logic;   
 
---display
+--clocks
 constant c_CLK_100MHZ_PERIOD_disp : time    := 2 ns;                              
-signal s_clk_100MHz_disp : std_logic;                                      
+signal s_clk_100MHz_disp : std_logic;   
+
+--reset                                   
 signal s_reset : std_logic ;                    
                                                 
-                                                
+ --decimal point input/output                                               
  signal s_dp_i : std_logic_vector(4-1 downto 0);
- signal s_dp_o : std_logic;                     
+ signal s_dp_o : std_logic;   
+ 
+ --display for 7seg and current number to show                  
  signal s_seg  : std_logic_vector(7-1 downto 0);
  signal s_dig  : std_logic_vector(4-1 downto 0);              
                      
@@ -28,7 +32,7 @@ begin
 uut_Door_lock_system : entity work.Door_lock_system
         port map(
             BTN     =>  BTN_s, 
-            door   => dvere_s,
+            door   => door_s,
             clk_disp     => s_clk_100MHz_disp,
             reset   => s_reset,    
                         

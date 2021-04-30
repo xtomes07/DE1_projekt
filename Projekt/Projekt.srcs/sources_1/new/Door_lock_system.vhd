@@ -12,16 +12,16 @@ entity Door_lock_system is
         clk_disp: in  std_logic;
         BTN     : in std_logic_vector(12-1 downto 0);       --button from keyboard
         ---outputs
-        door    : out std_logic;
-        RGB_led : out std_logic_vector(3-1 downto 0)
+        door    : out std_logic;                            --opening door if set to 1
+        RGB_led : out std_logic_vector(3-1 downto 0)        
         
      );
 end Door_lock_system;
 
 architecture Behavioral of Door_lock_system is
     -- Define the states
-    type state_type is (wait_state,
-                        setValue1,
+    type state_type is (wait_state,  --reseting/nulling state
+                        setValue1,   --states for user inputs for specific pin values
                         setValue2,
                         setValue3,
                         setValue4,
@@ -75,8 +75,8 @@ clk => clk_disp
 );      
         
 
- 
-door_lock : process(clk_disp)      --pin je 5672 hlavni proces
+ --Main implementation process based on state diagram
+door_lock : process(clk_disp)      --Hard set pin : 5672 
 begin   
 if rising_edge (clk_disp) then
     if present_state /= wait_state then
@@ -198,12 +198,10 @@ if rising_edge (clk_disp) then
                 end case; 
          elsif BTN = "000000000000" then
               s_set <= '0';        
-         end if;
-         
-         
-      
+         end if;      
 end if;
 end process;
+
 
 p_transfer_12btn_to_4digit : process(clk_disp, BTN) --button is converted to the value for 7segmet display
 begin
@@ -264,7 +262,8 @@ begin
             end case;
        end if;
     end process ;
-  
+
+--  LEDs popup and Door unlock/lock
  p_outputs : process(clk_disp) --control outputs         
     begin
         if (s_pass = '1') then          
