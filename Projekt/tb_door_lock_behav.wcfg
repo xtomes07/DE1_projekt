@@ -3,77 +3,170 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_top_behav.wdb" id="1">
+      <db_ref path="tb_door_lock_behav.wdb" id="1">
          <top_modules>
-            <top_module name="tb_top" />
+            <top_module name="tb_door_lock" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="285401fs"></ZoomEndTime>
-      <Cursor1Time time="619000fs"></Cursor1Time>
+      <ZoomEndTime time="1475001fs"></ZoomEndTime>
+      <Cursor1Time time="27000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="113"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="142"></NameColumnWidth>
+      <ValueColumnWidth column_width="67"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="14" />
-   <wvobject fp_name="/tb_top/uut_top/CLK100MHZ" type="logic">
-      <obj_property name="ElementShortName">CLK100MHZ</obj_property>
-      <obj_property name="ObjectShortName">CLK100MHZ</obj_property>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/tb_door_lock/s_clk_100MHz_disp" type="logic">
+      <obj_property name="ElementShortName">s_clk_100MHz_disp</obj_property>
+      <obj_property name="ObjectShortName">s_clk_100MHz_disp</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/SW" type="array">
-      <obj_property name="ElementShortName">SW[11:0]</obj_property>
-      <obj_property name="ObjectShortName">SW[11:0]</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/BTN" type="array">
+      <obj_property name="ElementShortName">BTN[11:0]</obj_property>
+      <obj_property name="ObjectShortName">BTN[11:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/zamek" type="logic">
-      <obj_property name="ElementShortName">zamek</obj_property>
-      <obj_property name="ObjectShortName">zamek</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/present_state" type="other">
+      <obj_property name="ElementShortName">present_state</obj_property>
+      <obj_property name="ObjectShortName">present_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/led0_r" type="logic">
-      <obj_property name="ElementShortName">led0_r</obj_property>
-      <obj_property name="ObjectShortName">led0_r</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/next_state" type="other">
+      <obj_property name="ElementShortName">next_state</obj_property>
+      <obj_property name="ObjectShortName">next_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/led0_g" type="logic">
-      <obj_property name="ElementShortName">led0_g</obj_property>
-      <obj_property name="ObjectShortName">led0_g</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/door" type="logic">
+      <obj_property name="ElementShortName">door</obj_property>
+      <obj_property name="ObjectShortName">door</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/led0_b" type="logic">
-      <obj_property name="ElementShortName">led0_b</obj_property>
-      <obj_property name="ObjectShortName">led0_b</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/s_pass" type="logic">
+      <obj_property name="ElementShortName">s_pass</obj_property>
+      <obj_property name="ObjectShortName">s_pass</obj_property>
+      <obj_property name="CustomSignalColor">#D2691E</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/AN" type="array">
-      <obj_property name="ElementShortName">AN[3:0]</obj_property>
-      <obj_property name="ObjectShortName">AN[3:0]</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/s_fail" type="logic">
+      <obj_property name="ElementShortName">s_fail</obj_property>
+      <obj_property name="ObjectShortName">s_fail</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/data_prevod" type="array">
+      <obj_property name="ElementShortName">data_prevod[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data_prevod[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/data0_i" type="array">
+      <obj_property name="ElementShortName">data0_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data0_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/data1_i" type="array">
+      <obj_property name="ElementShortName">data1_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data1_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/data2_i" type="array">
+      <obj_property name="ElementShortName">data2_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data2_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/data3_i" type="array">
+      <obj_property name="ElementShortName">data3_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data3_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/s_set" type="logic">
+      <obj_property name="ElementShortName">s_set</obj_property>
+      <obj_property name="ObjectShortName">s_set</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/RGB_led" type="array">
+      <obj_property name="ElementShortName">RGB_led[2:0]</obj_property>
+      <obj_property name="ObjectShortName">RGB_led[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o" type="array">
+      <obj_property name="ElementShortName">seg_o[6:0]</obj_property>
+      <obj_property name="ObjectShortName">seg_o[6:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o[6]" type="logic">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">[6]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o[5]" type="logic">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">[5]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o[4]" type="logic">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">[4]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o[3]" type="logic">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">[3]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o[2]" type="logic">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">[2]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o[1]" type="logic">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">[1]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/seg_o[0]" type="logic">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">[0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/CA" type="logic">
-      <obj_property name="ElementShortName">CA</obj_property>
-      <obj_property name="ObjectShortName">CA</obj_property>
+   <wvobject fp_name="/tb_door_lock/s_dig" type="array">
+      <obj_property name="ElementShortName">s_dig[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_dig[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_door_lock/s_dig[3]" type="logic">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">[3]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/s_dig[2]" type="logic">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">[2]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/s_dig[1]" type="logic">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">[1]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_door_lock/s_dig[0]" type="logic">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">[0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/CB" type="logic">
-      <obj_property name="ElementShortName">CB</obj_property>
-      <obj_property name="ObjectShortName">CB</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/s_clk_cnt" type="array">
+      <obj_property name="ElementShortName">s_clk_cnt[11:0]</obj_property>
+      <obj_property name="ObjectShortName">s_clk_cnt[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/CC" type="logic">
-      <obj_property name="ElementShortName">CC</obj_property>
-      <obj_property name="ObjectShortName">CC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/CD" type="logic">
-      <obj_property name="ElementShortName">CD</obj_property>
-      <obj_property name="ObjectShortName">CD</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/CE" type="logic">
-      <obj_property name="ElementShortName">CE</obj_property>
-      <obj_property name="ObjectShortName">CE</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/CF" type="logic">
-      <obj_property name="ElementShortName">CF</obj_property>
-      <obj_property name="ObjectShortName">CF</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/uut_top/CG" type="logic">
-      <obj_property name="ElementShortName">CG</obj_property>
-      <obj_property name="ObjectShortName">CG</obj_property>
+   <wvobject fp_name="/tb_door_lock/uut_Door_lock_system/s_cnt_eval" type="array">
+      <obj_property name="ElementShortName">s_cnt_eval[11:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cnt_eval[11:0]</obj_property>
    </wvobject>
 </wave_config>

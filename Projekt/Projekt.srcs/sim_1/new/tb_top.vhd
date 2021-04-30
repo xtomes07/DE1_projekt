@@ -24,9 +24,9 @@ begin
 
 uut_top : entity work.top
         port map(
-            SW     =>  BTN_s, 
+            BTN     =>  BTN_s, 
             CLK100MHZ => s_clk_100MHz_disp,
-            zamek   => dvere_s,
+            door_lock   => dvere_s,
             BTNC   => s_reset      
             
            
@@ -65,44 +65,61 @@ begin
     
         -- Report a note at the begining of stimulus process
         report "Stimulus process started" severity note;
-    BTN_s <= "000000000000"; wait for 100 ns;
+    BTN_s <= "000000000000"; wait for 100 ns;               --correct PIN
         BTN_s <= "000000100000"; wait for 100 ns;
     BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000001000000"; wait for 100 ns;
-   BTN_s <= "000000000000"; wait for 10 ns;
+    BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000010000000"; wait for 100 ns; 
     BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000000000100"; wait for 100 ns;
     BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "100000000000"; wait for 100 ns;
-       
     BTN_s <= "000000000000"; wait for 300 ns;
-  --------------------------------------------------------------------      
-        BTN_s <= "000001000000"; wait for 100 ns;
-BTN_s <= "000000000000"; wait for 10 ns;        
+--------------------------------------------------------------------      
+        BTN_s <= "000001000000"; wait for 100 ns;           --timeout
+    BTN_s <= "000000000000"; wait for 10 ns;        
         BTN_s <= "000000001000"; wait for 100 ns;
-BTN_s <= "000000000000"; wait for 10 ns;        
+    BTN_s <= "000000000000"; wait for 10 ns;        
         BTN_s <= "000100000000"; wait for 100 ns;
-BTN_s <= "000000000000"; wait for 100 ns;        
+    BTN_s <= "000000000000"; wait for 100 ns;        
         BTN_s <= "000000001000"; wait for 100 ns;
-BTN_s <= "000000000000"; wait for 10 ns;        
+    BTN_s <= "000000000000"; wait for 10 ns;        
         BTN_s <= "100000000000"; wait for 100 ns;
-     
-BTN_s <= "000000000000"; wait for 300 ns;
+    BTN_s <= "000000000000"; wait for 300 ns;
 ---------------------------------------------------------- 
-        BTN_s <= "000000100000"; wait for 100 ns;
-BTN_s <= "000000000000"; wait for 10 ns;       
+        BTN_s <= "000000100000"; wait for 100 ns;       --pin cancel
+    BTN_s <= "000000000000"; wait for 10 ns;       
         BTN_s <= "000001000000"; wait for 100 ns;
- BTN_s <= "000000000000"; wait for 10 ns;       
+    BTN_s <= "000000000000"; wait for 10 ns;       
         BTN_s <= "000010000000"; wait for 100 ns; 
-BTN_s <= "000000000000"; wait for 10 ns;
+    BTN_s <= "000000000000"; wait for 10 ns;
         BTN_s <= "000000000100"; wait for 100 ns;
-BTN_s <= "000000000000"; wait for 10 ns;        
-        BTN_s <= "010000000000"; wait for 100 ns;
-       
-BTN_s <= "000000000000"; wait for 100 ns;
-  --------------------------------------------------------------------   
-
+    BTN_s <= "000000000000"; wait for 10 ns;        
+        BTN_s <= "010000000000"; wait for 100 ns; 
+    BTN_s <= "000000000000"; wait for 100 ns;
+--------------------------------------------------------------------   
+    BTN_s <= "000000000000"; wait for 100 ns;               -- PIN fail
+        BTN_s <= "000010000000"; wait for 100 ns;
+    BTN_s <= "000000000000"; wait for 10 ns;
+        BTN_s <= "000010000000"; wait for 100 ns;
+    BTN_s <= "000000000000"; wait for 10 ns;
+        BTN_s <= "000010000000"; wait for 100 ns; 
+    BTN_s <= "000000000000"; wait for 10 ns;
+        BTN_s <= "000000000100"; wait for 100 ns;
+    BTN_s <= "000000000000"; wait for 10 ns;
+        BTN_s <= "100000000000"; wait for 100 ns;    
+    BTN_s <= "000000000000"; wait for 300 ns;
+--------------------------------------------------------------------   
+    BTN_s <= "000000000000"; wait for 100 ns;               -- Enter before comlete PIN
+        BTN_s <= "000000100000"; wait for 100 ns;
+    BTN_s <= "000000000000"; wait for 10 ns;
+        BTN_s <= "000010000000"; wait for 100 ns;
+    BTN_s <= "000000000000"; wait for 10 ns;
+        BTN_s <= "000010000000"; wait for 100 ns; 
+    BTN_s <= "000000000000"; wait for 10 ns;
+        BTN_s <= "100000000000"; wait for 100 ns;    
+    BTN_s <= "000000000000"; wait for 300 ns;
 
         -- Report a note at the end of stimulus process
         report "Stimulus process finished" severity note;
