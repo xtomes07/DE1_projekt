@@ -39,7 +39,7 @@ Odkaz na vhdl kód modulu Door_lock_system:
 [cnt_up_down]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/Door_lock_system.vhd)
 
 Simulace modulu Door_lock system:
-![Simulace]( https://github.com/xtomes07/DE1_projekt/doorlock_modul.PNG)
+![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/doorlock_modul.PNG)
 
 
 ## TOP module description and simulations
