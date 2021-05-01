@@ -14,6 +14,8 @@ omezený čas a kdyby uživatel zadávání pinu přerušil a nevrátil se k zad
 oděmčený po určitou dobu a uživatel bude muset v tomto okamžiku otevřít dveře. Po uplynutí doby se dveře zase zamknou a uživatel musí znovu zadat správný PIN.
 
 ## Popis hardwaru
+- Arty A7-100T
+- Externi ovládací panel s klávesnicí a displejem:
 
 Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 4x3 klávesnice s čísly 
 0-9 a tlačítky Enter a Cancel pro zadávání PINu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly charakter LOW a kvůli ušetření 
