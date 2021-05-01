@@ -106,6 +106,6 @@ hardwarové součásti.
  paměti a nevyresetuje se. 
 ## Zdroje
 
-   1. [VHDL_Door_pin](https://www.youtube.com/watch?v=b-DL3LiJrOk&t=654s)
+   1. [VHDL_Door_pin](https://youtu.be/b-DL3LiJrOk)
    2. 
    
