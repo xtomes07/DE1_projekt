@@ -94,6 +94,7 @@ tlačítky na klávesnici a nebylo možné dodělat časovače. Při předělán
 delší dobu, tak v tom okamžiku na něm probehlo víc hodinových impulzů a náš program to bral jako další zmačknuté tlačítko, a začal to ukládat do dalších pamětí. To se vyřešilo 
 přidáním setovacího signalu, který když je nastupná hrana hodinového signálu a zároveň je zmáčklé některé z tlačítek, nastaví do 1, aby nedošlo k vícenásobnému uložení té sáme 
 hodnoty do paměti. 
+
 - Implementácia
 - Zhodnotenie implementácie
 - Zhodnotenie výsledku
