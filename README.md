@@ -3,19 +3,18 @@
 ### Členové týmu
 Ondřej Smola (217628), Jiří Tomešek (220785), Ivo Točený (222683), Jiří Vahalík (220490)
 
-[Link to our GitHub project folder]( https://github.com/xtomes07/DE1_projekt)
+[Odkaz na naši GitHub složku projektu]( https://github.com/xtomes07/DE1_projekt)
 
 ### Cíl projektu
 
 Tento projekt si klade za cíl především implementovat systém zámku dveří pomocí programovacího jazyka VHDL. Zadávání hodnot PINu bude realizováno pomocí 4x3 klávesnice, zadaný 
 PIN se pak bude zobrazovat na čtyřech sedmi segmentových displejích. Pro pomocnou signalizaci, jestli byl zadán správný PIN, je přidána RGB LED dioda, která bude měnit barvy na 
 základě správnosti PINu. V případě správného PIN-kódu bude svítit zelenou barvou, při špatném červenou a v aktivním stavu bude svítit žlutě. Uživatel bude mít na zadaní pinu jen 
-omezený čas a kdyby uživatel zadávání pinu přerušil a nevrátil se k zadávání, tak se po čase zadaný PIN resetuje, 
-aby nemohl být zneužit.
+omezený čas a kdyby uživatel zadávání pinu přerušil a nevrátil se k zadávání, tak se po čase zadaný PIN resetuje, aby nemohl být zneužit.
 
 ## Popis hardwaru
 
-Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 4x4 klávesnice s čísly 
+Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 4x3 klávesnice s čísly 
 0-9 a tlačítky Enter a Cancel pro zadávání PINu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly charakter LOW a kvůli ušetření 
 pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by je v cyklu aktivovaly a poté zas deaktivovaly a to v takové rychlosti, aby to lidské oko 
 nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo NC relé(normally close), které by pak dále ovládalo samotný zámek dveří. Schéma zapojení 
@@ -27,10 +26,10 @@ Pmod konektory na desce Arty A7 a jejich piny:
 ![Piny]( https://github.com/xtomes07/DE1_projekt/blob/main/piny_na_arty.PNG)
 
 ## Popis VHDL modulů a jejich simulace
-Pro ovládání displejů byly použity moduly, které jsme vytvářeli v hodinách DE1 (Driver 7seg 4digits, clock enable, cnt up down, hex 7seg). Dále jsme vytvoři vlastní modul 
+Pro ovládání displejů byly použity moduly, které jsme vytvářeli v hodinách DE1 (Driver 7seg 4digits, clock enable, cnt up down, hex 7seg). Dále jsme vytvořili vlastní modul 
 Door_lock_system, který obsahuje proces p_saveValue na setování tlačítek z klávesnice do pamětí data0_i až data3_i. Dále obsahuje proces p_transfer_12btn_to_4digit, který nám 
 převadí 12bitový vektor BTN, který interpretuje tlačítka z klávesnice na 4 bitovou hodnotu, která se poté využívá k zobrazení PINu na displeji a vyhodnocení, jestli byl PIN 
-spárvný nebo ne. Hlavní proces door_lock je tvořen 6 stavy. 4 stavy jsou pro ukádaní hodnot(setValue_state0-3), jeden vyhodnocovací (eval_state) a čekací stav(wait_state),ve 
+spárvný nebo ne. Hlavní proces door_lock je tvořen 6 stavy. 4 stavy jsou pro ukádaní hodnot(setValue_state1-4), jeden vyhodnocovací (eval_state) a čekací stav(wait_state),ve 
 kterém systém setrvává v době, když se uživatel nesnaží odemknout dveře. Jsou zde také čítače, čítač s_clk_cnt se spouští, když se začne zadávat PIN a omezuje dobu, po kterou 
 uživatel můsí zvládnout zadat PIN, když se uživali nepodaří zadat včat PIN, čítač vynuluje paměti a vrátí se do čekacího stavu. Další čítač s_cnt_eval se spouští ve 
 vyhodnocovacím stavu a slouží k tomu, že dveře zůstanou odemklé po námi zvolenou dobu a poté se zase zamknou. P_outputs slouží pro ovládání zámku a barvy led-diody.
@@ -51,7 +50,11 @@ Simulace modulu Door_lock system:
 
 ## Popis TOP modulu a jejich simulace
 
-[Odkaz na vhdl kód top modulu]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/top.vhd)
+TOP modul pracuje se vstupy CLK100MHZ, BTNC a vstupu z 4x3 klávesnice. Modul Door_lock_sytem je hlavním modulem TOPu a v něm se nachází i ostatní použité moduly. TOP modul je 
+připojen na výstupy sedmi segmentovek (výstupy CA:CG(7:0)) katod segmentů, DP desetinné tečky a AN(3:0) zapojení 4 sedmi segmentovek), výstup RGB led (LED(3:0)) a samotný zámek 
+Lock.
+
+[Odkaz na vhdl kód top modulu]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/top.vhd)
 
 Schéma TOP modulu:
 ![Schema](https://github.com/xtomes07/DE1_projekt/blob/main/top_schema.png)
