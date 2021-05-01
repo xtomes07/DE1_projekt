@@ -65,8 +65,8 @@ pinu, když nejsou zadány všechny 4 hodnoty.
 
 ## Popis TOP modulu a jejich simulace
 
-TOP modul pracuje se vstupy CLK100MHZ, BTNC a vstupu z 4x3 klávesnice. Modul Door_lock_sytem je hlavním modulem TOPu a v něm se nachází i ostatní použité moduly. TOP modul je 
-připojen na výstupy sedmi segmentovek (výstupy CA:CG(7:0)) katod segmentů, DP desetinné tečky a AN(3:0) zapojení 4 sedmi segmentovek), výstup RGB led (LED(3:0)) a samotný zámek 
+TOP modul pracuje se vstupy CLK100MHZ, BTNC a se vstupy z 4x3 klávesnice. Modul Door_lock_sytem je hlavním modulem TOPu a v něm se nachází i ostatní použité moduly. TOP modul je 
+připojen na výstupy sedmisegmentovek (výstupy CA:CG(7:0)) katod segmentů, DP desetinné tečky a AN(3:0) zapojení 4 sedmi segmentovek), výstup RGB led (LED(3:0)) a samotný zámek 
 Lock.
 
 [Odkaz na vhdl kód top modulu]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/top.vhd)
@@ -76,6 +76,8 @@ Schéma TOP modulu:
 
 Simulace top modulu:
 ![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/top_simulace.PNG)
+V simulaci jsou odsimulovane stavy : Uspěšné zadání PINu, vypršení časové relace pro zadání pinu, zrušení zadávání PINu, špatně zadaný PIN a předčastné vyhodnocení 
+pinu, když nejsou zadány všechny 4 hodnoty. Led0_r, led0_g, led0_b ovládají barvu RGB LED diody, AN udává jednu aktivní sedmisegmentovku ze čtyř, CA až CG jsou segmenty daých segmentovek a door_lock ovládá NC relé, které je připojeno k zámku.
 
 ## Stavový diagram
 
@@ -110,7 +112,10 @@ hardwarové součásti.
  - Program by mohl obsahot vylepšení, které by zahrnovalo, že si uživatel může zvolit svůj vlastní PIN nebo jej změnit. Problém s realizací nastavéní/změny PINu, nastal kvůli 
  tomu, že je pro tento účel potřebná paměť, ve které bude PIN stále uložený i když bude program vypnutý a po zapnutí si sám bez přítomnosti uživatelského zásahu PIN načte z 
  paměti a nevyresetuje se. 
- - Podařilo se nám vytvořit fukční ovládací prvek pro ovládaní zámku dveří. Otestovali jsme ho na případech, které by v praxi mohli nastat. Na úspěšné zadání pinu, na zrušení zadávaní pinu, na zadání nesprávného PINu, napředčastné potvzení PINu, když nebyly zadány všechny 4 čísla a také na vypršení časové relace v průběhu zadávaní. Také nám funguje signalizace pomocí RGB led diody a také časovače pro časové okno pro zdávaní PINu a také pro podržení odemklého zámku.
+ - Podařilo se nám vytvořit fukční ovládací prvek pro ovládaní zámku dveří. Otestovali jsme ho na případech, které by v praxi mohli nastat. Na úspěšné zadání pinu, na zrušení 
+ zadávaní pinu, na zadání nesprávného PINu, napředčastné potvzení PINu, když nebyly zadány všechny 4 čísla a také na vypršení časové relace v průběhu zadávaní. Také nám 
+ funguje signalizace pomocí RGB led diody a také časovače pro časové okno pro zdávaní PINu a také pro podržení odemklého zámku.
+ 
 ## Zdroje
 
    1. [VHDL_Door_pin](https://youtu.be/b-DL3LiJrOk)
