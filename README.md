@@ -107,5 +107,5 @@ hardwarové součásti.
 ## Zdroje
 
    1. [VHDL_Door_pin](https://youtu.be/b-DL3LiJrOk)
-   2. 
+   2. [Ukoly spacovávané v hodinách Digitalní elektroniky 1](https://github.com/xtomes07/Digital_elektronics_1/tree/main/Labs)
    
