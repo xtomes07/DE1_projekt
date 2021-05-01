@@ -76,8 +76,9 @@ Schéma TOP modulu:
 
 Simulace top modulu:
 ![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/top_simulace.PNG)
-V simulaci jsou odsimulovane stavy : Uspěšné zadání PINu, vypršení časové relace pro zadání pinu, zrušení zadávání PINu, špatně zadaný PIN a předčastné vyhodnocení 
-pinu, když nejsou zadány všechny 4 hodnoty. Led0_r, led0_g, led0_b ovládají barvu RGB LED diody, AN udává jednu aktivní sedmisegmentovku ze čtyř, CA až CG jsou segmenty daých segmentovek a door_lock ovládá NC relé, které je připojeno k zámku.
+V simulaci jsou odsimulované stavy : Uspěšné zadání PINu, vypršení časové relace pro zadání pinu, zrušení zadávání PINu, špatně zadaný PIN a předčastné vyhodnocení 
+pinu, když nejsou zadány všechny 4 hodnoty. Led0_r, led0_g, led0_b ovládají barvu RGB LED diody, AN udává jednu aktivní sedmisegmentovku ze čtyř, CA až CG jsou segmenty daných 
+segmentovek a door_lock ovládá NC relé, které je připojeno k zámku.
 
 ## Stavový diagram
 
