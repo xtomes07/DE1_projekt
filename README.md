@@ -96,9 +96,9 @@ delší dobu, tak v tom okamžiku na něm probehlo víc hodinových impulzů tak
 vyřešilo přidáním setovacího signalu, který když je nastupná hrana hodinového signálu a zároveň je zmáčklé některé z tlačítek, nastaví do 1, aby nedošlo k vícenásobnému uložení 
 té sáme hodnoty do paměti. 
 
-- Implementácia - Prvotný nápad implementácie bol použiť stavový diagram kvoli intuitívnemu použitiu a jeho funkcionalite, keďže vo viacerých častiach programu treba čakať na uživateľa a jeho zadané vstupy a na základe toho konať. Na základe tohto premyslieť, aké stavy by boli vhodné. Ďalší postup bol premyslieť ako bude vyzerať top modul a všetky potrebné hardwarové súčiastky v ňom. 
-- 
-- Zhodnotenie implementácie
+- Implementace: První nápad implementace byl použít stavový diagram kvůli intuitivnímu použití a jeho funkcionalitě, protože ve více částech programu je třeba čekat na uživatele 
+a jeho zadané vstupy a na základe toho konat. Na základě tohto přemýšlet, jaké stavy by byly vhodné. Další postup byl přemýšlet, jak bude vypadat top modul a všechny potřebné 
+hardwarové součásti.  
 - Zhodnotenie výsledku
 
  - Program by mohl obsahot vylepšení, které by zahrnovalo, že si uživatel může zvolit svůj vlastní PIN nebo jej změnit. Problém s realizací nastavéní/změny PINu, nastal kvůli 
