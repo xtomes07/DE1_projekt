@@ -85,21 +85,21 @@ Odkaz na naši video prezentaci:
 
 ## Diskuse o výsledcích
 
-Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací vyplývá, že by zámek měl fungovat.
-Pokusili jsme se navrhnout vlastní desku v softwaru Fritzing, ale to se nám nepovedlo, protože knihovna se součástkama neobsahuje Pmod konektor, který má 6 pinů ve dvou 
+- Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací vyplývá, že by zámek měl fungovat.
+- Pokusili jsme se navrhnout vlastní desku v softwaru Fritzing, ale to se nám nepovedlo, protože knihovna se součástkama neobsahuje Pmod konektor, který má 6 pinů ve dvou 
 řadách(6x2), proto jsme ve schematu pouzili jiny 12 pinový konektor, ale tento konektor by nešel připojit do naší Arty A7-100T, proto je to pouze návrh zapojení, ale není to 
 kompletní realizace.
-Při porgramování jsme se setkali i s problémy, které se nám následně podařilo vyřešit. Jeden z větších problému byl, že hlavní procest Door_lock, byl z počátku synchronizován s 
-tlačítky na klávesnici a nebylo možné dodělat časovače. Při předělání na synchronizaci pomocí hodinového impulzu, nastal problém s tím ,že když se tlačítko s hodnotou drželo 
-delší dobu, tak v tom okamžiku na něm probehlo víc hodinových impulzů a náš program to bral jako další zmačknuté tlačítko, a začal to ukládat do dalších pamětí. To se vyřešilo 
-přidáním setovacího signalu, který když je nastupná hrana hodinového signálu a zároveň je zmáčklé některé z tlačítek, nastaví do 1, aby nedošlo k vícenásobnému uložení té sáme 
-hodnoty do paměti. 
+- Při porgramování jsme se setkali i s problémy, které se nám následně podařilo vyřešit. Jeden z větších problému byl, že hlavní procest Door_lock, byl z počátku synchronizován 
+s tlačítky na klávesnici a nebylo možné dodělat časovače. Při předělání na synchronizaci pomocí hodinového impulzu, nastal problém s tím ,že když se tlačítko s hodnotou drželo 
+delší dobu, tak v tom okamžiku na něm probehlo víc hodinových impulzů tak to náš program to bral jako další zmáčknutí tlačítka a začal to ukládat do dalších pamětí. To se 
+vyřešilo přidáním setovacího signalu, který když je nastupná hrana hodinového signálu a zároveň je zmáčklé některé z tlačítek, nastaví do 1, aby nedošlo k vícenásobnému uložení 
+té sáme hodnoty do paměti. 
 
 - Implementácia
 - Zhodnotenie implementácie
 - Zhodnotenie výsledku
-- Možné vylepšenia -> nastavenie vlastného pinu
- Program by mohl obsahot vylepšení, které by zahrnovalo, že si uživatel může zvolit svůj vlastní PIN nebo jej změnit. Problém s realizací nastavéní/změny PINu, nastal kvůli 
+
+ - Program by mohl obsahot vylepšení, které by zahrnovalo, že si uživatel může zvolit svůj vlastní PIN nebo jej změnit. Problém s realizací nastavéní/změny PINu, nastal kvůli 
  tomu, že je pro tento účel potřebná paměť, ve které bude PIN stále uložený i když bude program vypnutý a po zapnutí si sám bez přítomnosti uživatelského zásahu PIN načte z 
  paměti a nevyresetuje se. 
 ## Zdroje
