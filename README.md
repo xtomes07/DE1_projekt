@@ -85,11 +85,15 @@ Odkaz na naši video prezentaci:
 
 ## Diskuze výsledků
 
-Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací, schémat a kódů vyplývá, že by zámek měl fungovat 
-bez sebemenších problémů.
-- Pokus o návrh dosky -> schéma dosky
-- Problémy, ktoré nastali -> 
-- Vyriešenie problémov
+Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací, schémat a kódů vyplývá, že by zámek měl fungovat.
+Pokusili jsme se navrhnout vlastní desku v softwaru Fritzing, ale to se nám nepovedlo, protože knihovna se součástkama neobsahuje Pmod konektor, který má 6 pinů ve dvou 
+řadách(6x2), proto jsme ve schematu pouzili jiny 12 pinový konektor, ale tento konektor by nešel připojit do naší Arty A7-100T, proto je to pouze návrh zapojení, ale není to 
+kompletní realizace.
+Při porgramování jsme se setkali i s problémy, které se nám následně podařilo vyřešit. Jeden z větších problému byl, že hlavní procest Door_lock, byl z počátku synchronizován s 
+tlačítky na klávesnici a nebylo možné dodělat časovače. Při předělání na synchronizaci pomocí hodinového impulzu, nastal problém s tím ,že když se tlačítko s hodnotou drželo 
+delší dobu, tak v tom okamžiku na něm probehlo víc hodinových impulzů a náš program to bral jako další zmačknuté tlačítko, a začal to ukládat do dalších pamětí. To se vyřešilo 
+přidáním setovacího signalu, který když je nastupná hrana hodinového signálu a zároveň je zmáčklé některé z tlačítek, nastaví do 1, aby nedošlo k vícenásobnému uložení té sáme 
+hodnoty do paměti. 
 - Implementácia
 - Zhodnotenie implementácie
 - Zhodnotenie výsledku
