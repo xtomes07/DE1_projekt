@@ -95,15 +95,13 @@ s tlačítky na klávesnici a nebylo možné dodělat časovače. Při předěl�
 delší dobu, tak v tom okamžiku na něm probehlo víc hodinových impulzů tak to náš program to bral jako další zmáčknutí tlačítka a začal to ukládat do dalších pamětí. To se 
 vyřešilo přidáním setovacího signalu, který když je nastupná hrana hodinového signálu a zároveň je zmáčklé některé z tlačítek, nastaví do 1, aby nedošlo k vícenásobnému uložení 
 té sáme hodnoty do paměti. 
-
 - Implementace: První nápad implementace byl použít stavový diagram kvůli intuitivnímu použití a jeho funkcionalitě, protože ve více částech programu je třeba čekat na uživatele 
 a jeho zadané vstupy a na základe toho konat. Na základě tohto přemýšlet, jaké stavy by byly vhodné. Další postup byl přemýšlet, jak bude vypadat top modul a všechny potřebné 
 hardwarové součásti.  
-- Zhodnotenie výsledku
-
  - Program by mohl obsahot vylepšení, které by zahrnovalo, že si uživatel může zvolit svůj vlastní PIN nebo jej změnit. Problém s realizací nastavéní/změny PINu, nastal kvůli 
  tomu, že je pro tento účel potřebná paměť, ve které bude PIN stále uložený i když bude program vypnutý a po zapnutí si sám bez přítomnosti uživatelského zásahu PIN načte z 
  paměti a nevyresetuje se. 
+ - Podařilo se nám vytvořit fukční ovládací prvek pro ovládaní zámku dveří. Otestovali jsme ho na případech, které by v praxi mohli nastat. Na úspěšné zadání pinu, na zrušení zadávaní pinu, na zadání nesprávného PINu, napředčastné potvzení PINu, když nebyly zadány všechny 4 čísla a také na vypršení časové relace v průběhu zadávaní. Také nám funguje signalizace pomocí RGB led diody a také časovače pro časové okno pro zdávaní PINu a také pro podržení odemklého zámku.
 ## Zdroje
 
    1. [VHDL_Door_pin](https://youtu.be/b-DL3LiJrOk)
