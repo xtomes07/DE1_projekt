@@ -1,19 +1,19 @@
-# Door lock with 4x3 matrix keyboard
+# Zámek dveří otevíraný na heslo s 4x3 klávesnicí
 
-### Team members
+### Členové týmu
 Ondřej Smola (217628), Jiří Tomešek (220785), Ivo Točený (222683), Jiří Vahalík (220490)
 
 [Link to our GitHub project folder]( https://github.com/xtomes07/DE1_projekt)
 
-### Project objectives
+### Cíl projektu
 
-Tento projekt si klade za cíl především implementovat systém zámku dveří pomocí programovacího jazyka VHDL. Zadávání hodnot PINu bude realizováno pomocí 4x4 klávesnice, zadaný 
-PIN se pak bude zobrazovat na čtyřech sedmi segmentových displejích. Pro pomocnou signalizaci, jestli byl zadán správný PIN je přidána RGB LED dioda, která bude měnit barvy na 
+Tento projekt si klade za cíl především implementovat systém zámku dveří pomocí programovacího jazyka VHDL. Zadávání hodnot PINu bude realizováno pomocí 4x3 klávesnice, zadaný 
+PIN se pak bude zobrazovat na čtyřech sedmi segmentových displejích. Pro pomocnou signalizaci, jestli byl zadán správný PIN, je přidána RGB LED dioda, která bude měnit barvy na 
 základě správnosti PINu. V případě správného PIN-kódu bude svítit zelenou barvou, při špatném červenou a v aktivním stavu bude svítit žlutě. Uživatel bude mít na zadaní pinu jen 
 omezený čas a kdyby uživatel zadávání pinu přerušil a nevrátil se k zadávání, tak se po čase zadaný PIN resetuje, 
 aby nemohl být zneužit.
 
-## Hardware description
+## Popis hardwaru
 
 Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 4x4 klávesnice s čísly 
 0-9 a tlačítky Enter a Cancel pro zadávání PINu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly charakter LOW a kvůli ušetření 
@@ -26,7 +26,7 @@ Přiřazení k pinům:
 Pmod konektory na desce Arty A7 a jejich piny:
 ![Piny]( https://github.com/xtomes07/DE1_projekt/blob/main/piny_na_arty.PNG)
 
-## VHDL modules description and simulations
+## Popis VHDL modulů a jejich simulace
 Pro ovládání displejů byly použity moduly, které jsme vytvářeli v hodinách DE1 (Driver 7seg 4digits, clock enable, cnt up down, hex 7seg). Dále jsme vytvoři vlastní modul 
 Door_lock_system, který obsahuje proces p_saveValue na setování tlačítek z klávesnice do pamětí data0_i až data3_i. Dále obsahuje proces p_transfer_12btn_to_4digit, který nám 
 převadí 12bitový vektor BTN, který interpretuje tlačítka z klávesnice na 4 bitovou hodnotu, která se poté využívá k zobrazení PINu na displeji a vyhodnocení, jestli byl PIN 
@@ -49,11 +49,9 @@ Simulace modulu Door_lock system:
 ![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/doorlock_modul.PNG)
 
 
-## TOP module description and simulations
+## Popis TOP modulu a jejich simulace
 
-TOP modul pracuje se vstupy CLK100MHZ, BTNC a vstupu z 4x3 klávesnice. Modul Door_lock_sytem je hlavním modulem TOPu a v něm se nachází i ostatní použité moduly. TOP modul je připojen na Výstupy sedmi segmentovek (výspupy CA:CG(7:0) katod segmentů, DP desetinné tečky a AN(3:0) zapojení 4 sedmi segmentovek), výstup RGB led (LED(3:0)) a samotný zámek Lock.
-
-[Odkaz na vhdl kód top modulu](https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/top.vhd)
+[Odkaz na vhdl kód top modulu]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/top.vhd)
 
 Schéma TOP modulu:
 ![Schema](https://github.com/xtomes07/DE1_projekt/blob/main/top_schema.png)
@@ -61,7 +59,7 @@ Schéma TOP modulu:
 Simulace top modulu:
 ![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/top_simulace.PNG)
 
-## State diagram
+## Stavový diagram
 
 Stavový diagram obsahuje 6 stavů. Prvním je wait_state, ve kterém program čeká na instrukce a případně se do něj program vrací v případě neúspěchu zadávání kódu. V případě
 zmáčknutí jakékoli číslice se program posune do stavu SetValue1 a tak dále přes stav SetValue2-4 až do vyhodonovacího stavu eval_state. Pokud se při zadávání číslic omylem či
@@ -76,10 +74,10 @@ program vrací do wait_state.
 Odkaz na naši video prezentaci:
 ![Video]()
 
-## Discussion of results
+## Diskuze výsledků
 
 Vokec...
 
-## References
+## Zdroje
 
    1. Write your text here.
