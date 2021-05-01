@@ -70,11 +70,12 @@ Simulace top modulu:
 
 ## Stavový diagram
 
-Stavový diagram obsahuje 6 stavů. Prvním je wait_state, ve kterém program čeká na instrukce a případně se do něj program vrací v případě neúspěchu zadávání kódu. V případě
+Stavový diagram obsahuje 6 stavů. Prvním je wait_state, ve kterém program čeká na instrukce, když se nezadává PIN. V případě
 zmáčknutí jakékoli číslice se program posune do stavu SetValue1 a tak dále přes stav SetValue2-4 až do vyhodonovacího stavu eval_state. Pokud se při zadávání číslic omylem či
-úmyslně zmáčkne Cancel (BTN ="010000000000"), program se vrátí do wait_state. Dále se tak děje pokud signál s_clk_cnt překročí konstantu c_TIMEOUT, což je 10s. Zmáčknutím 
-klávesy Enter (BTN ="100000000000") při zadávání kódu, ať už v jakémkoli setValue stavu, program začne vyhodnocovat správnost hesla. Po vyhodnocení, úspěšném či neúspěšném, se 
-program vrací do wait_state.
+úmyslně zmáčkne Cancel (BTN ="010000000000"), program se vrátí do wait_state. Dále se tak děje pokud signál s_clk_cnt překročí konstantu c_TIMEOUT, která definuje časové okno 
+pro zadávaní jednoho pokuku PINu. Zmáčknutím klávesy Enter (BTN ="100000000000") při zadávání kódu, ať už v jakémkoli setValue stavu, program začne vyhodnocovat správnost 
+hesla. Po vyhodnocení, úspěšném či neúspěšném, se 
+program vrací do stavu wait_state.
 
 ![Stavový diagram]( https://github.com/xtomes07/DE1_projekt/blob/main/state_diagram.png)
 
