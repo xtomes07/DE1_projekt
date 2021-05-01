@@ -96,7 +96,8 @@ delší dobu, tak v tom okamžiku na něm probehlo víc hodinových impulzů tak
 vyřešilo přidáním setovacího signalu, který když je nastupná hrana hodinového signálu a zároveň je zmáčklé některé z tlačítek, nastaví do 1, aby nedošlo k vícenásobnému uložení 
 té sáme hodnoty do paměti. 
 
-- Implementácia
+- Implementácia - Prvotný nápad implementácie bol použiť stavový diagram kvoli intuitívnemu použitiu a jeho funkcionalite, keďže vo viacerých častiach programu treba čakať na uživateľa a jeho zadané vstupy a na základe toho konať. Na základe tohto premyslieť, aké stavy by boli vhodné. Ďalší postup bol premyslieť ako bude vyzerať top modul a všetky potrebné hardwarové súčiastky v ňom. Následovalo rozvrhnutie práce medzi nami, kde sme sa rozdelili na implementačnú časť a hardwarovú časť s pravidelnými stretnutiami a progresom. Následne spojiť dané časti dohromady.
+- 
 - Zhodnotenie implementácie
 - Zhodnotenie výsledku
 
