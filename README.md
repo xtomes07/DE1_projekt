@@ -1,4 +1,4 @@
-# Zámek dveří otevíraný na heslo s 4x3 klávesnicí
+# Zámek dveří otevíraný na heslo ovládaný 4x3 klávesnicí
 
 ### Členové týmu
 Ondřej Smola (217628), Jiří Tomešek (220785), Ivo Točený (222683), Jiří Vahalík (220490)
