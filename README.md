@@ -83,9 +83,9 @@ program vrací do wait_state.
 Odkaz na naši video prezentaci:
 ![Video]()
 
-## Diskuze výsledků
+## Diskuse o výsledcích
 
-Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací, schémat a kódů vyplývá, že by zámek měl fungovat.
+Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací vyplývá, že by zámek měl fungovat.
 Pokusili jsme se navrhnout vlastní desku v softwaru Fritzing, ale to se nám nepovedlo, protože knihovna se součástkama neobsahuje Pmod konektor, který má 6 pinů ve dvou 
 řadách(6x2), proto jsme ve schematu pouzili jiny 12 pinový konektor, ale tento konektor by nešel připojit do naší Arty A7-100T, proto je to pouze návrh zapojení, ale není to 
 kompletní realizace.
@@ -99,7 +99,9 @@ hodnoty do paměti.
 - Zhodnotenie implementácie
 - Zhodnotenie výsledku
 - Možné vylepšenia -> nastavenie vlastného pinu
-
+ Program by mohl obsahot vylepšení, které by zahrnovalo, že si uživatel může zvolit svůj vlastní PIN nebo jej změnit. Problém s realizací nastavéní/změny PINu, nastal kvůli 
+ tomu, že je pro tento účel potřebná paměť, ve které bude PIN stále uložený i když bude program vypnutý a po zapnutí si sám bez přítomnosti uživatelského zásahu PIN načte z 
+ paměti a nevyresetuje se. 
 ## Zdroje
 
    1. Write your text here.
