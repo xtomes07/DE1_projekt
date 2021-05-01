@@ -79,7 +79,8 @@ Odkaz na naši video prezentaci:
 
 ## Diskuze výsledků
 
-Vokec...
+Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací, schémat a kódů vyplývá, že by zámek měl fungovat 
+bez sebemenších problémů.
 
 ## Zdroje
 
