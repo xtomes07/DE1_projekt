@@ -50,8 +50,17 @@ vyhodnocovacím stavu a slouží k tomu, že dveře zůstanou odemklé po námi 
 
 [Odkaz na vhdl kód modulu Door_lock_system]( https://github.com/xtomes07/DE1_projekt/blob/main/Projekt/Projekt.srcs/sources_1/new/Door_lock_system.vhd)
 
-Simulace modulu Door_lock system:
+### Simulace modulu Door_lock system:
 ![Simulace]( https://github.com/xtomes07/DE1_projekt/blob/main/doorlock_modul.PNG)
+V simulaci modulu můžeme vidět s_clk_10HZ_displ, pomocí kterého probíhá synchronizace. BTN vektor(11:0), který reprezentuje tlačítka na klávasnici. Pomocí present_state a 
+next_state se řídí case pro ukládání hodnot a case pro stavy. Signály s_pass, s_fail jsou pomocne signály, pomocí kterých se dále vyhodnocuje jakou barvou má mít LED-dioda a 
+jesli se odemkne zámek dveří. Do data_převod se nám převádí aktualní hodnoty z klávesnice a tyto hodnoty se dále ukládají do pamětí data0_i až data3_i, podle toho v jakém stavu 
+se program nachazí. S_set slouží k zaznamenání, že tlačítko bylo načteno, aby nedocházelo k opakovanému načítaní jednoho a toho samého tlačítka. Vektor seg_o zobrazuje segmenty 
+sedmisegmentového displeje. Z počátku jsou se ve všech segmentovkách nastavena hodnota "1111", aby jim nesvítil žádný segment, při zadávaní se k daným segmentovkám dostávají 
+data, jakou číslici mají zobrazit, takže při zadávání PINu se postupě všechny 4 sedmisegmentovky rozsvětcují. S_clk_cnt je čítač pro časové okno zadávání PINu a s_cnt_eval je 
+čítač pro časové okno vyhodnocovacího stavu eval_state, který podrží odemčený zámek po zadefinovaný čas. RGB_led je vektor, ve kterém je zapsaná hodnota pro barvu diody. 
+Simulovyly jsme stavy: Uspěšne zadání PINu, vypršení časové relace pro zadání pinu, zrušení zadávání PINu, špatně zadaný PIN a předčastné vyhodnocení pinu, když nejsou zadány 
+všechny 4 hodnoty.
 
 
 ## Popis TOP modulu a jejich simulace
