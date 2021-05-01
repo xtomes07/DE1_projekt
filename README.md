@@ -51,6 +51,8 @@ Simulace modulu Door_lock system:
 
 ## TOP module description and simulations
 
+TOP modul pracuje se vstupy CLK100MHZ, BTNC a vstupu z 4x3 klávesnice. Modul Door_lock_sytem je hlavním modulem TOPu a v něm se nachází i ostatní použité moduly. TOP modul je připojen na Výstupy sedmi segmentovek (výspupy CA:CG(7:0) katod segmentů, DP desetinné tečky a AN(3:0) zapojení 4 sedmi segmentovek), výstup RGB led (LED(3:0)) a samotný zámek Lock.
+
 [Odkaz na vhdl kód top modulu]( https://github.com/xtomes07/DE1_projekt/Projekt/Projekt.srcs/sources_1/new/top.vhd)
 
 Schéma TOP modulu:
