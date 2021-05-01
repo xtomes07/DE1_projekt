@@ -10,7 +10,8 @@ Ondřej Smola (217628), Jiří Tomešek (220785), Ivo Točený (222683), Jiří 
 Tento projekt si klade za cíl především implementovat systém zámku dveří pomocí programovacího jazyka VHDL. Zadávání hodnot PINu bude realizováno pomocí 4x3 klávesnice, zadaný 
 PIN se pak bude zobrazovat na čtyřech sedmi segmentových displejích. Pro pomocnou signalizaci, jestli byl zadán správný PIN, je přidána RGB LED dioda, která bude měnit barvy na 
 základě správnosti PINu. V případě správného PIN-kódu bude svítit zelenou barvou, při špatném červenou a v aktivním stavu bude svítit žlutě. Uživatel bude mít na zadaní pinu jen 
-omezený čas a kdyby uživatel zadávání pinu přerušil a nevrátil se k zadávání, tak se po čase zadaný PIN resetuje, aby nemohl být zneužit. Dveře jsou taky zavřeny po chvílce otevření, kvůli bezpečnosti.
+omezený čas a kdyby uživatel zadávání pinu přerušil a nevrátil se k zadávání, tak se po čase zadaný PIN resetuje, aby nemohl být zneužit. Zámek po zadání správného PINu je 
+oděmčený po určitou dobu a uživatel bude muset v tomto okamžiku otevřít dveře. Po uplynutí doby se dveře zase zamknou a uživatel musí znovu zadat správný PIN.
 
 ## Popis hardwaru
 
