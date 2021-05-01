@@ -21,6 +21,7 @@ pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by
 nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo NC relé(normally close), které by pak dále ovládalo samotný zámek dveří, kvuli 
 bezpečnosti bude zámek v normálovem stavu zamčeny a na jeho vstupu bude 0, kdyby to bylo naopak, tak třeba při výpadku elektřiny by se na zamku objevila 0 a zámek by se odemknul 
 a to je nežádoucí.
+
 Schéma zapojení desky by mohlo vypadat následovně:
 ![Schema]( https://github.com/xtomes07/DE1_projekt/blob/main/Deska_schem.jpg)
 Přiřazení k pinům:
