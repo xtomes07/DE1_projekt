@@ -87,6 +87,13 @@ Odkaz na naši video prezentaci:
 
 Funkčnost zámku nebylo možné ověřit "naživo" z důvodů toho, že nemáme hardware fyzicky u sebe. Avšak z výše uvedených simulací, schémat a kódů vyplývá, že by zámek měl fungovat 
 bez sebemenších problémů.
+- Pokus o návrh dosky -> schéma dosky
+- Problémy, ktoré nastali -> 
+- Vyriešenie problémov
+- Implementácia
+- Zhodnotenie implementácie
+- Zhodnotenie výsledku
+- Možné vylepšenia -> nastavenie vlastného pinu
 
 ## Zdroje
 
