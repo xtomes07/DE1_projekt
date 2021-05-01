@@ -17,12 +17,12 @@ oděmčený po určitou dobu a uživatel bude muset v tomto okamžiku otevřít 
 - Arty A7-100T
 - Externi ovládací panel s klávesnicí a displejem:
 
-Pro tento případ by bylo vhodné zhotovit desku, která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 4x3 klávesnice s čísly 
-0-9 a tlačítky Enter a Cancel pro zadávání PINu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly charakter LOW a kvůli ušetření 
-pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by je v cyklu aktivovaly a poté zas deaktivovaly a to v takové rychlosti, aby to lidské oko 
-nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo NC relé(normally close), které by pak dále ovládalo samotný zámek dveří, kvuli 
-bezpečnosti bude zámek v normálovem stavu zamčeny a na jeho vstupu bude 0, kdyby to bylo naopak, tak třeba při výpadku elektřiny by se na zamku objevila 0 a zámek by se odemknul 
-a to je nežádoucí.
+Pro tento případ by bylo vhodné zhotovit desku (externí ovládací panel), která by obsahovala 4x Pmod konektory, pomocí kterých by byla propojena s Arty A7. Na této desce by byla 
+4x3 klávesnice s čísly 0-9 a tlačítky Enter a Cancel pro zadávání PINu. Dále 4 sedmisegmentové displeje pro zobrazení zadávaných čísel, tyto segmentové displeje by měly 
+charakter LOW a kvůli ušetření pinů na 4 Pmod konektorech, by byly připojeny přes PNP tranzistory, které by je v cyklu aktivovaly a poté zas deaktivovaly a to v takové 
+rychlosti, aby to lidské oko nepostřehlo, že je vždy aktivní jen jeden sedmisegmentový diplej. Dále by na desce bylo NC relé(normally close), které by pak dále ovládalo samotný 
+zámek dveří, kvuli bezpečnosti bude zámek v normálovem stavu zamčeny a na jeho vstupu bude 0, kdyby to bylo naopak, tak třeba při výpadku elektřiny by se na zamku objevila 0 a 
+zámek by se odemknul a to je nežádoucí.
 
 Schéma zapojení desky by mohlo vypadat následovně:
 ![Schema]( https://github.com/xtomes07/DE1_projekt/blob/main/Deska_schem.jpg)
