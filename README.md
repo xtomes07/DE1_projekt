@@ -93,7 +93,7 @@ program vrací do stavu wait_state.
 ## Video
 
 Odkaz na naši video prezentaci:
-![Video](https://youtu.be/mzR9EhjoeD8)
+[Video](https://youtu.be/mzR9EhjoeD8)
 
 ## Diskuse o výsledcích
 
